@@ -13,6 +13,7 @@
 		53E8B7C228ACEDE600DDEFB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53E8B7C028ACEDE600DDEFB3 /* Main.storyboard */; };
 		53E8B7C428ACEDE900DDEFB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E8B7C328ACEDE900DDEFB3 /* Assets.xcassets */; };
 		53E8B7C728ACEDE900DDEFB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53E8B7C528ACEDE900DDEFB3 /* LaunchScreen.storyboard */; };
+		53E8B7D228AD07A000DDEFB3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E8B7D128AD07A000DDEFB3 /* ViewModel.swift */; };
 		D0443FEC1630B65C445DA1DC /* Pods_AniLease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 290DE3FC22C3BA90C2504057 /* Pods_AniLease.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		53E8B7C328ACEDE900DDEFB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53E8B7C628ACEDE900DDEFB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53E8B7C828ACEDE900DDEFB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53E8B7D128AD07A000DDEFB3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		8D8D3A118BED5EEF7A6AE560 /* Pods-AniLease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AniLease.release.xcconfig"; path = "Target Support Files/Pods-AniLease/Pods-AniLease.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,15 +65,40 @@
 		53E8B7B928ACEDE600DDEFB3 /* AniLease */ = {
 			isa = PBXGroup;
 			children = (
-				53E8B7BA28ACEDE600DDEFB3 /* AppDelegate.swift */,
-				53E8B7BC28ACEDE600DDEFB3 /* SceneDelegate.swift */,
-				53E8B7BE28ACEDE600DDEFB3 /* ViewController.swift */,
-				53E8B7C028ACEDE600DDEFB3 /* Main.storyboard */,
+				53E8B7D028AD071E00DDEFB3 /* Application */,
+				53E8B7CE28AD06B900DDEFB3 /* Modules */,
 				53E8B7C328ACEDE900DDEFB3 /* Assets.xcassets */,
-				53E8B7C528ACEDE900DDEFB3 /* LaunchScreen.storyboard */,
 				53E8B7C828ACEDE900DDEFB3 /* Info.plist */,
 			);
 			path = AniLease;
+			sourceTree = "<group>";
+		};
+		53E8B7CE28AD06B900DDEFB3 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				53E8B7CF28AD06F200DDEFB3 /* Main */,
+				53E8B7C528ACEDE900DDEFB3 /* LaunchScreen.storyboard */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		53E8B7CF28AD06F200DDEFB3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				53E8B7BE28ACEDE600DDEFB3 /* ViewController.swift */,
+				53E8B7C028ACEDE600DDEFB3 /* Main.storyboard */,
+				53E8B7D128AD07A000DDEFB3 /* ViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		53E8B7D028AD071E00DDEFB3 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				53E8B7BA28ACEDE600DDEFB3 /* AppDelegate.swift */,
+				53E8B7BC28ACEDE600DDEFB3 /* SceneDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 		7B983B458499526EB06F9C50 /* Frameworks */ = {
@@ -88,7 +115,6 @@
 				3D805E4979BF73CB16D858C9 /* Pods-AniLease.debug.xcconfig */,
 				8D8D3A118BED5EEF7A6AE560 /* Pods-AniLease.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -191,6 +217,7 @@
 			files = (
 				53E8B7BF28ACEDE600DDEFB3 /* ViewController.swift in Sources */,
 				53E8B7BB28ACEDE600DDEFB3 /* AppDelegate.swift in Sources */,
+				53E8B7D228AD07A000DDEFB3 /* ViewModel.swift in Sources */,
 				53E8B7BD28ACEDE600DDEFB3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
