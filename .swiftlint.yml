@@ -1,0 +1,7 @@
+line_length:
+- 300 # warning
+- 400 # error
+
+excluded:
+- Pods
+- xpocket/AppDelegate.swift
