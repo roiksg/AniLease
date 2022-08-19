@@ -26,6 +26,9 @@
                                                 <rect key="frame" x="173.5" y="972" width="67" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                                <connections>
+                                                    <segue destination="wXn-Jy-rf2" kind="unwind" unwindAction="unwindMain:" id="npq-Jz-Idn"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N40-W5-XwH">
                                                 <rect key="frame" x="186" y="21" width="42" height="21"/>
@@ -66,6 +69,7 @@
                     <size key="freeformSize" width="414" height="1132"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="wXn-Jy-rf2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="108.69565217391305" y="162.72321428571428"/>
         </scene>
