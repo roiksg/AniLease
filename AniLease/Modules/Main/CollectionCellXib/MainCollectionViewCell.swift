@@ -33,11 +33,21 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     private var releaseID: String?
     
-    static let identifair = "releaseCell"
+    static let identifiers = "releaseCell"
+    
+    var segue: (() -> ())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        let touch = UITapGestureRecognizer(target: self, action: #selector(self.tapToLabelCell))
+        self.addGestureRecognizer(touch)
         // Initialization code
+    }
+    
+    @objc func tapToLabelCell () {
+        segue!()
+        print("tap")
     }
     
     @objc private func timerInterval() {

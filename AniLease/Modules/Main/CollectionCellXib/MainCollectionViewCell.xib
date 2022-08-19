@@ -127,7 +127,7 @@ En name</string>
                 <outlet property="titleJpEnName" destination="gLf-1f-Xua" id="9JL-3h-gfd"/>
                 <outlet property="titleName" destination="83h-te-7Mz" id="TqN-HS-Osg"/>
             </connections>
-            <point key="canvasLocation" x="58.695652173913047" y="123.88392857142857"/>
+            <point key="canvasLocation" x="-54" y="128"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -9,7 +9,7 @@ import Foundation
 import CoreVideo
 
 class MainViewModel {
-    weak var controller: ViewController?
+    weak var controller: ViewController!
     
     private var release: [ReleaseMainModel] = []
     
