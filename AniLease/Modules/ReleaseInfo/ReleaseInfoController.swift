@@ -11,6 +11,7 @@ class ReleaseInfoController: UIViewController {
     
     private var viewModel: ReleaseInfoModel?
     
+    @IBOutlet weak var descriptionText: UITextView!
     var identifier: String!
 
     override func viewDidLoad() {
@@ -18,5 +19,8 @@ class ReleaseInfoController: UIViewController {
         viewModel = ReleaseInfoModel(self)
         // Do any additional setup after loading the view.
     }
-
+    @IBAction func refresh(_ sender: Any) {
+        descriptionText.text = viewModel?.network()
+    }
+    
 }

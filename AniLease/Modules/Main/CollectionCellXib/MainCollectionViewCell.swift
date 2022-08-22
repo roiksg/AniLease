@@ -66,16 +66,18 @@ class MainCollectionViewCell: UICollectionViewCell {
         seconds.text = String(ss)
     }
     
-    func configureXib(_ relseaseMainModel: ReleaseMainModel) {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerInterval), userInfo: nil, repeats: true)
-        self.releaseID = relseaseMainModel.ID
-        globalTime = relseaseMainModel.time
+    func configureXib(_ releaseMainModel: ReleaseMainModel) {
+        if releaseMainModel.time != 0 {
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerInterval), userInfo: nil, repeats: true)
+        }
+        self.releaseID = releaseMainModel.ID
+        globalTime = releaseMainModel.time
         let (dd, hh, mm , ss) = getTime(time: globalTime)
         
-        titleName.text = relseaseMainModel.name
-        titleJpEnName.text = relseaseMainModel.JpEnName
-        episod.text = relseaseMainModel.Episod
-        titleImage.image = UIImage(named: relseaseMainModel.image)
+        titleName.text = releaseMainModel.name
+        titleJpEnName.text = releaseMainModel.JpEnName
+        episod.text = releaseMainModel.Episod
+        titleImage.image = UIImage(named: releaseMainModel.image)
         self.days.text = String(dd)
         self.hours.text = String(hh)
         self.minutes.text = String(mm)
