@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MainCollectionViewCell: UICollectionViewCell {
 
@@ -77,7 +78,9 @@ class MainCollectionViewCell: UICollectionViewCell {
         titleName.text = releaseMainModel.name
         titleJpEnName.text = releaseMainModel.JpEnName
         episod.text = releaseMainModel.Episod
-        titleImage.image = UIImage(named: releaseMainModel.image)
+//        titleImage.image = UIImage(named: releaseMainModel.image)
+        let url = URL(string: releaseMainModel.image)
+        titleImage.kf.setImage(with: url)
         self.days.text = String(dd)
         self.hours.text = String(hh)
         self.minutes.text = String(mm)

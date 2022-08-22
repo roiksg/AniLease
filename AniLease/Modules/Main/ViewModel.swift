@@ -18,11 +18,14 @@ class MainViewModel {
     
     init (_ vc: ViewController) {
         controller = vc
-        let element1 = ReleaseMainModel(name: "test1", JpEnName: "test1", image: "testitem", time: 572748, Episod: "EP 4/12", ID: "123")
-        let element2 = ReleaseMainModel(name: "test1", JpEnName: "test1", image: "testitem", time: 572748, Episod: "EP 4/12", ID: "123")
-        self.release.append(element1)
-        self.release.append(element2)
-        parserLiveChartRSS()
+        self.parserLiveChartRSS()
+    }
+    
+    func loadItemCell(){
+        for item in self.item {
+            let element = ReleaseMainModel(name: item.title, JpEnName: item.link, image: item.imageURL, time: 0, Episod: "EP NONE", ID: "123")
+            self.release.append(element)
+        }
     }
     
     func releaseCount() -> Int{
@@ -38,11 +41,10 @@ class MainViewModel {
         parser.getLiveChartItem(url) { (item) in
             self.item = item
             
-            for item in self.item {
-                print(item.title)
+            self.loadItemCell()
+            DispatchQueue.main.async {
+                self.controller.collectionRelease.reloadData()
             }
-
-            
         }
     }
 }

@@ -16,10 +16,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = MainViewModel(self)
-        collectionRelease.dataSource = self
-        collectionRelease.delegate = self
-        collectionRelease.register(.init(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: MainCollectionViewCell.identifiers)
+        self.viewModel = MainViewModel(self)
+        self.collectionRelease.dataSource = self
+        self.collectionRelease.delegate = self
+        self.collectionRelease.register(.init(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: MainCollectionViewCell.identifiers)
         // Do any additional setup after loading the view.
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.releaseCount()
+        return viewModel.releaseCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -49,6 +49,7 @@ extension ViewController: UICollectionViewDataSource {
             self.cellIdentifiers = self.viewModel.returnCellModel()[indexPath.row].ID
             self.performSegue(withIdentifier: "ReleaseInfoVCsegue", sender: self)
         }
+        
         return collectionCell
     }
 }

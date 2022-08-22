@@ -6,5 +6,7 @@ target 'AniLease' do
   use_frameworks!
 
   # Pods for AniLease
+  pod 'Kingfisher', '~> 7.0'
+  pod 'RealmSwift', '10.28.5'
   pod 'SwiftLint', '0.48.0'
 end

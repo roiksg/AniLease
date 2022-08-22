@@ -23,7 +23,7 @@ class LiveChartParserXML: NSObject, XMLParserDelegate {
     func getLiveChartItem (_ url: URL, completion: (([Item]) -> Void)?) {
         self.completion = completion
         let session = URLSession.shared
-        let task = session.dataTask(with: url) { (data, response, error) in
+        let task = session.dataTask(with: url) { [unowned self](data, response, error)  in
             if let error = error {
                 print(error.localizedDescription)
             }
