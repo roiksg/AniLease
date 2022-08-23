@@ -9,11 +9,12 @@ import Foundation
 
 class StringParser {
     
-    func getEraiRawsEpisods(_ text: String) -> String {
+    func getERAndSPEpisods(_ text: String) -> String {
         
         var boolStringFirst: Bool = false
         var boolStringSecond: Bool = false
         var boolStringHevc: Bool = false
+        var boolstringSecondV2: Bool = false
         var endSet: Bool = false
         
         var valueString: String = ""
@@ -21,6 +22,7 @@ class StringParser {
         let stringFirst: [Character] = [" ", "-", " "]
         let stringSecond: [Character] = ["[","1","0","8","0","p","]"]
         let stringHEVC: [Character] = ["(","H","E","V","C",")"]
+        let stringSecondV2: [Character] = ["(","1","0","8","0","p",")"]
         
         var episods: String = ""
         var i: Int = 0
@@ -33,16 +35,18 @@ class StringParser {
                     if i == 3 {
                         boolStringFirst = true
                         boolStringSecond = true
+                        boolstringSecondV2 = true
                         boolStringHevc = true
                         i = 2
                     }
                 }
                 else if boolStringFirst == true && $0 != "[" && $0 != "(" && endSet == false {
                     if $0 == "-" {
-                        i = 1
+                        i = 2
                         boolStringFirst = false
                         boolStringSecond = false
                         boolStringHevc = false
+                        boolstringSecondV2 = false
                         valueString = ""
                     }
                     else {
@@ -50,7 +54,6 @@ class StringParser {
                     }
                 }
                 else if $0 == stringSecond[x] && boolStringSecond == true {
-                    boolStringHevc = false
                     endSet = true
                     if x < stringSecond.count {
                         x += 1
@@ -59,8 +62,19 @@ class StringParser {
                         episods = valueString
                     }
                 }
+                else if $0 == stringSecondV2[x] && boolstringSecondV2 == true {
+                    boolStringSecond = false
+                    endSet = true
+                    if x < stringSecondV2.count {
+                        x += 1
+                    }
+                    if x == 7 {
+                        episods = valueString
+                    }
+                }
                 else if $0 == stringHEVC[x] && boolStringHevc == true{
                     boolStringSecond = false
+                    boolstringSecondV2 = false
                     endSet = true
                     if x < stringHEVC.count {
                         x += 1
@@ -72,6 +86,7 @@ class StringParser {
                 else {
                     boolStringFirst = false
                     boolStringSecond = false
+                    boolstringSecondV2 = false
                     boolStringHevc = false
                     endSet = false
                     i = 0
@@ -80,5 +95,22 @@ class StringParser {
             }
         }
         return episods
+    }
+    
+    func getLiveChartEpisods (_ text: String) -> String {
+        var startWrite: Bool = false
+        var textValue: String = ""
+        
+        text.forEach {
+            if $0 == "#" {
+                startWrite = true
+                textValue = ""
+            }
+            if startWrite == true {
+                textValue += String($0)
+            }
+        }
+        textValue.removeFirst()
+        return textValue
     }
 }
