@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     private var viewModel: MainViewModel!
     
     private var cellIdentifiers: String = ""
+    private let strParser: StringParser = StringParser()
+    private var testString = "[Torrent] Meng Qi Shi Shen: Huanxi Zhui Hun - 09 (HEVC)[us][br][es][sa][fr][de][it][Airing]"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,7 @@ class ViewController: UIViewController {
         self.collectionRelease.dataSource = self
         self.collectionRelease.delegate = self
         self.collectionRelease.register(.init(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: MainCollectionViewCell.identifiers)
+        print(strParser.getEraiRawsEpisods(testString))
         // Do any additional setup after loading the view.
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
