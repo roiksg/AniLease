@@ -41,7 +41,7 @@ class Network {
                 print(httpResponse.statusCode)
             }
             
-            if let data = data {
+            if data != nil {
             }
         }
         dataTask?.resume()

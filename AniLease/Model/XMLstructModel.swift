@@ -7,10 +7,17 @@
 
 import Foundation
 
-struct Item {
+struct LiveChartRSS {
     var link: String
     var title: String
     var pubDate: Date
     var category: String
     var imageURL: String
+}
+
+struct EraiRawsRSS {
+    var title: String
+    var pubDate: Date
+    var subtitles: String
+    var category: String
 }

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:media="http://search.yahoo.com/mrss/"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>  <title>LiveChart.me - Recent Anime Episodes</title>
+  <link>https://www.livechart.me/schedule/all</link>
+  <lastBuildDate>Mon, 22 Aug 2022 03:00:00 +0000</lastBuildDate>
+  <webMaster>mike@livechart.me (Michael Millard)</webMaster>
+  <atom:link href="https://www.livechart.me/feeds/episodes" rel="self" type="application/rss+xml" />
+  <description>Feed of anime episodes that have aired in the last 24 hours</description>
+
+    <item>
+      <guid>https://www.livechart.me/anime/11346#episode132380:1661137200</guid>
+      <link>https://www.livechart.me/anime/11346</link>
+      <title>Bai Yao Pu 3rd Season #5</title>
+      <pubDate>Mon, 22 Aug 2022 03:00:00 +0000</pubDate>
+      <category>Anime/OVAs/Episodes</category>
+
+      <enclosure url="https://u.livechart.me/anime/11346/poster_image/b037e0bad87a3852c34cc1272b1b036e.jpg?style=small&amp;format=jpg" length="0" type="image/jpeg" />
+      <media:thumbnail url="https://u.livechart.me/anime/11346/poster_image/b037e0bad87a3852c34cc1272b1b036e.jpg?style=small&amp;format=jpg" width="175" height="250" />
+    </item>
+    <item>
+      <guid>https://www.livechart.me/anime/10026#episode95515:1661133600</guid>
+      <link>https://www.livechart.me/anime/10026</link>
+      <title>Dubu Xiaoyao #236</title>
+      <pubDate>Mon, 22 Aug 2022 02:00:00 +0000</pubDate>
+      <category>Anime/OVAs/Episodes</category>
+
+      <enclosure url="https://u.livechart.me/anime/10026/poster_image/5b7d7ea0106cfedfc5a8894a17580cbc.jpeg?style=small&amp;format=jpg" length="0" type="image/jpeg" />
+      <media:thumbnail url="https://u.livechart.me/anime/10026/poster_image/5b7d7ea0106cfedfc5a8894a17580cbc.jpeg?style=small&amp;format=jpg" width="175" height="250" />
+    </item>
+    <item>
+      <guid>https://www.livechart.me/anime/10952#episode131451:1661125500</guid>
+      <link>https://www.livechart.me/anime/10952</link>
+      <title>Insect Land #21</title>
+      <pubDate>Sun, 21 Aug 2022 23:45:00 +0000</pubDate>
+      <category>Anime/Television/Episodes</category>
+
+      <enclosure url="https://u.livechart.me/anime/10952/poster_image/0070061c1152f921f9bce792474ab51e.webp?style=small&amp;format=jpg" length="0" type="image/jpeg" />
+      <media:thumbnail url="https://u.livechart.me/anime/10952/poster_image/0070061c1152f921f9bce792474ab51e.webp?style=small&amp;format=jpg" width="175" height="250" />
+    </item>
+    <item>
+      <guid>https://www.livechart.me/anime/11304#episode132411:1661112000</guid>
+      <link>https://www.livechart.me/anime/11304</link>
+      <title>Saint Seiya: Knights of the Zodiac - Battle for Sanctuary - #5</title>
+      <pubDate>Sun, 21 Aug 2022 20:00:00 +0000</pubDate>
+      <category>Anime/OVAs/Episodes</category>
+
+      <enclosure url="https://u.livechart.me/anime/11304/poster_image/05982a8612d149966bdd5e25ec3d0cc8.webp?style=small&amp;format=jpg" length="0" type="image/jpeg" />
+      <media:thumbnail url="https://u.livechart.me/anime/11304/poster_image/05982a8612d149966bdd5e25ec3d0cc8.webp?style=small&amp;format=jpg" width="175" height="250" />
+    </item>
+    <item>
+      <guid>https://www.livechart.me/anime/10510#episode107180:1661094000</guid>
+      <link>https://www.livechart.me/anime/10510</link>
+      <title>Fuuto Tantei #4</title>
+      <pubDate>Sun, 21 Aug 2022 15:00:00 +0000</pubDate>
+      <category>Anime/Television/Episodes</category>
+
+      <enclosure url="https://u.livechart.me/anime/10510/poster_image/1498160926d6336b6db6ef3d50d786c3.png?style=small&amp;format=jpg" length="0" type="image/jpeg" />
+      <media:thumbnail url="https://u.livechart.me/anime/10510/poster_image/1498160926d6336b6db6ef3d50d786c3.png?style=small&amp;format=jpg" width="175" height="250" />
+    </item>
+    <item>
+      <guid>https://www.livechart.me/anime/11212#episode108804:1661094000</guid>
+      <link>https://www.livechart.me/anime/11212</link>
+      <title>Mori no Kuma-san, Toumin-chuu. #8</title>
+      <pubDate>Sun, 21 Aug 2022 15:00:00 +0000</pubDate>
+      <category>Anime/Television/Episodes</category>
+
+      <enclosure url="https://u.livechart.me/anime/11212/poster_image/0fbdb1182d6ff063a6c2e56cc7fd1695.webp?style=small&amp;format=jpg" length="0" type="image/jpeg" />
+      <media:thumbnail url="https://u.livechart.me/anime/11212/poster_image/0fbdb1182d6ff063a6c2e56cc7fd1695.webp?style=small&amp;format=jpg" width="175" height="250" />
+    </item>
+    <item>
+      <guid>https://www.livechart.me/anime/11047#episode111528:1661092200</guid>
+      <link>https://www.livechart.me/anime/11047</link>
+      <title>Prima Doll #8</title>
+      <pubDate>Sun, 21 Aug 2022 14:30:00 +0000</pubDate>
+      <category>Anime/Television/Episodes</category>
+
+      <enclosure url="https://u.livechart.me/anime/11047/poster_image/c6b08b9811bd8fa310941ac21c8f455c.webp?style=small&amp;format=jpg" length="0" type="image/jpeg" />
+      <media:thumbnail url="https://u.livechart.me/anime/11047/poster_image/c6b08b9811bd8fa310941ac21c8f455c.webp?style=small&amp;format=jpg" width="175" height="250" />
+    </item>
+    <item>
+      <guid>https://www.livechart.me/anime/11091#episode111589:1661090400</guid>
+      <link>https://www.livechart.me/anime/11091</link>
+      <title>YUREI DECO #8</title>
+      <pubDate>Sun, 21 Aug 2022 14:00:00 +0000</pubDate>
+      <category>Anime/Television/Episodes</category>
+
+      <enclosure url="https://u.livechart.me/anime/11091/poster_image/251f30e07c1ac9664874752147c9e2d4.webp?style=small&amp;format=jpg" length="0" type="image/jpeg" />
+      <media:thumbnail url="https://u.livechart.me/anime/11091/poster_image/251f30e07c1ac9664874752147c9e2d4.webp?style=small&amp;format=jpg" width="175" height="250" />
+    </item>
+    <item>
+      <guid>https://www.livechart.me/anime/11155#episode107856:1661088600</guid>
+      <link>https://www.livechart.me/anime/11155</link>
+      <title>RWBY: Hyosetsu Teikoku #8</title>
+      <pubDate>Sun, 21 Aug 2022 13:30:00 +0000</pubDate>
+      <category>Anime/Television/Episodes</category>
+
+      <enclosure url="https://u.livechart.me/anime/11155/poster_image/9f784575c40cdc4b2c850ce8001f1eb7.jpg?style=small&amp;format=jpg" length="0" type="image/jpeg" />
+      <media:thumbnail url="https://u.livechart.me/anime/11155/poster_image/9f784575c40cdc4b2c850ce8001f1eb7.jpg?style=small&amp;format=jpg" width="175" height="250" />
+    </item>
+    <item>
+      <guid>https://www.livechart.me/anime/10739#episode108018:1661086500</guid>
+      <link>https://www.livechart.me/anime/10739</link>
+      <title>Hanabi-chan wa Okuregachi #7</title>
+      <pubDate>Sun, 21 Aug 2022 12:55:00 +0000</pubDate>
+      <category>Anime/Television/Episodes</category>
+
+      <enclosure url="https://u.livechart.me/anime/10739/poster_image/90616753ed78d8d5908f8e2a78d0fc2f.webp?style=small&amp;format=jpg" length="0" type="image/jpeg" />
+      <media:thumbnail url="https://u.livechart.me/anime/10739/poster_image/90616753ed78d8d5908f8e2a78d0fc2f.webp?style=small&amp;format=jpg" width="175" height="250" />
+    </item>
+    <item>
+      <guid>https://www.livechart.me/anime/10677#episode109050:1661085000</guid>
+      <link>https://www.livechart.me/anime/10677</link>
+      <title>Isekai Yakkyoku #7</title>
+      <pubDate>Sun, 21 Aug 2022 12:30:00 +0000</pubDate>
+      <category>Anime/Television/Episodes</category>
+
+      <enclosure url="https://u.livechart.me/anime/10677/poster_image/ef5ab007a46bc53ffc00535afed5d998.webp?style=small&amp;format=jpg" length="0" type="image/jpeg" />
+      <media:thumbnail url="https://u.livechart.me/anime/10677/poster_image/ef5ab007a46bc53ffc00535afed5d998.webp?style=small&amp;format=jpg" width="175" height="250" />
+    </item>
+    <item>
+      <guid>https://www.livechart.me/anime/3379#episode108006:1661083200</guid>
+      <link>https://www.livechart.me/anime/3379</link>
+      <title>Renmei Kuugun Koukuu Mahou Ongakutai Luminous Witches #7</title>
+      <pubDate>Sun, 21 Aug 2022 12:00:00 +0000</pubDate>
+      <category>Anime/Television/Episodes</category>
+
+      <enclosure url="https://u.livechart.me/anime/3379/poster_image/4c254b3b00d7b5cb1b083f229db0acb2.webp?style=small&amp;format=jpg" length="0" type="image/jpeg" />
+      <media:thumbnail url="https://u.livechart.me/anime/3379/poster_image/4c254b3b00d7b5cb1b083f229db0acb2.webp?style=small&amp;format=jpg" width="175" height="250" />
+    </item>
+    <item>
+      <guid>https://www.livechart.me/anime/10851#episode107939:1661076000</guid>
+      <link>https://www.livechart.me/anime/10851</link>
+      <title>Love Live! Superstar!! 2nd Season #6</title>
+      <pubDate>Sun, 21 Aug 2022 10:00:00 +0000</pubDate>
+      <category>Anime/Television/Episodes</category>
+
+      <enclosure url="https://u.livechart.me/anime/10851/poster_image/e99311616b5bb7d0674b357c4bcabe84.webp?style=small&amp;format=jpg" length="0" type="image/jpeg" />
+      <media:thumbnail url="https://u.livechart.me/anime/10851/poster_image/e99311616b5bb7d0674b357c4bcabe84.webp?style=small&amp;format=jpg" width="175" height="250" />
+    </item>
+    <item>
+      <guid>https://www.livechart.me/anime/1483#episode132092:1661074200</guid>
+      <link>https://www.livechart.me/anime/1483</link>
+      <title>Sazae-san #2647</title>
+      <pubDate>Sun, 21 Aug 2022 09:30:00 +0000</pubDate>
+      <category>Anime/Television/Episodes</category>
+
+      <enclosure url="https://u.livechart.me/anime/1483/poster_image/8f2dafdd473cb9b0d16d4d24a6730862.jpg?style=small&amp;format=jpg" length="0" type="image/jpeg" />
+      <media:thumbnail url="https://u.livechart.me/anime/1483/poster_image/8f2dafdd473cb9b0d16d4d24a6730862.jpg?style=small&amp;format=jpg" width="175" height="250" />
+    </item>
+    <item>
+      <guid>https://www.livechart.me/anime/1484#episode131415:1661072400</guid>
+      <link>https://www.livechart.me/anime/1484</link>
+      <title>Chibi Maruko-chan (1995) #1353</title>
+      <pubDate>Sun, 21 Aug 2022 09:00:00 +0000</pubDate>
+      <category>Anime/Television/Episodes</category>
+
+      <enclosure url="https://u.livechart.me/anime/1484/poster_image/53070a09891f452ffefc030060dfa5c5.png?style=small&amp;format=jpg" length="0" type="image/jpeg" />
+      <media:thumbnail url="https://u.livechart.me/anime/1484/poster_image/53070a09891f452ffefc030060dfa5c5.png?style=small&amp;format=jpg" width="175" height="250" />
+    </item>
+    <item>
+      <guid>https://www.livechart.me/anime/3045#episode131439:1661072400</guid>
+      <link>https://www.livechart.me/anime/3045</link>
+      <title>Puzzle &amp; Dragon #218</title>
+      <pubDate>Sun, 21 Aug 2022 09:00:00 +0000</pubDate>
+      <category>Anime/Television/Episodes</category>
+
+      <enclosure url="https://u.livechart.me/anime/3045/poster_image/97e70dcb0d8822b168e57c7e39097a9e.jpg?style=small&amp;format=jpg" length="0" type="image/jpeg" />
+      <media:thumbnail url="https://u.livechart.me/anime/3045/poster_image/97e70dcb0d8822b168e57c7e39097a9e.jpg?style=small&amp;format=jpg" width="175" height="250" />
+    </item>
+    <item>
+      <guid>https://www.livechart.me/anime/2476#episode131427:1661070600</guid>
+      <link>https://www.livechart.me/anime/2476</link>
+      <title>BORUTO: NARUTO NEXT GENERATIONS #263</title>
+      <pubDate>Sun, 21 Aug 2022 08:30:00 +0000</pubDate>
+      <category>Anime/Television/Episodes</category>
+
+      <enclosure url="https://u.livechart.me/anime/2476/poster_image/94cf24f7e24e99cf70f8d06713482f98.png?style=small&amp;format=jpg" length="0" type="image/jpeg" />
+      <media:thumbnail url="https://u.livechart.me/anime/2476/poster_image/94cf24f7e24e99cf70f8d06713482f98.png?style=small&amp;format=jpg" width="175" height="250" />
+    </item>
+</channel>
+</rss>

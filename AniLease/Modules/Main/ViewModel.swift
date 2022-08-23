@@ -12,7 +12,7 @@ class MainViewModel {
     weak var controller: ViewController!
     
     private var release: [ReleaseMainModel] = []
-    private var item: [Item] = []
+    private var item: [LiveChartRSS] = []
     private var parser = LiveChartParserXML()
     private var urlString = "https://www.livechart.me/feeds/episodes"
     

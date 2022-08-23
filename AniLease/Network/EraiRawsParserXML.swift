@@ -1,26 +1,25 @@
 //
-//  liveChartParserXML.swift
+//  EraiRawsParserXML.swift
 //  AniLease
 //
-//  Created by VironIT on 22.08.22.
+//  Created by VironIT on 23.08.22.
 //
 
 import Foundation
 
-class LiveChartParserXML: NSObject, XMLParserDelegate {
+class EraiRawsParserXML: NSObject, XMLParserDelegate {
     
-    private var item: [LiveChartRSS] = []
-    private var completion: (([LiveChartRSS]) -> Void)?
+    private var item: [EraiRawsRSS] = []
+    private var completion: (([EraiRawsRSS]) -> Void)?
     
     private var elementName = ""
     private var element = ""
-    private var link = ""
     private var title = ""
     private var pubDate = ""
+    private var subtitles = ""
     private var category = ""
-    private var imageURL = ""
     
-    func getLiveChartItem (_ url: URL, completion: (([LiveChartRSS]) -> Void)?) {
+    func getEraiRawsItem (_ url: URL, completion: (([EraiRawsRSS]) -> Void)?) {
         self.completion = completion
         let session = URLSession.shared
         let task = session.dataTask(with: url) { [unowned self](data, response, error)  in
@@ -43,34 +42,30 @@ class LiveChartParserXML: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         element = elementName
         if elementName == "item" {
-            link = ""
             title = ""
             pubDate = ""
+            subtitles = ""
             category = ""
         }
-        if elementName == "enclosure" {
-            if let imageURL = attributeDict["url"] {
-                self.imageURL = imageURL
-            }
-        }
-        
     }
+    
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         switch element {
-        case "link": link += string
         case "title": title += string
         case "pubDate": pubDate += string
-        case "category": category += string
+        case "erai:subtitles": subtitles += string
+        case "erai:category": category += string
         default: break
         }
     }
+    
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "item" {
             let dateFormatter = DateFormatter()
             // Sun, 21 Aug 2022 09:00:00 +0000
             dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss Z"
             let time = dateFormatter.date(from: pubDate) ?? Date()
-            let newItem = LiveChartRSS(link: link, title: title, pubDate: time, category: category, imageURL: imageURL)
+            let newItem = EraiRawsRSS(title: title, pubDate: time, subtitles: subtitles, category: category)
             item.append(newItem)
         }
     }

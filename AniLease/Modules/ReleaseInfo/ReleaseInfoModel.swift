@@ -15,7 +15,7 @@ class ReleaseInfoModel {
         controller = vc
     }
     func network() -> String {
-        var contents: String = ""
+        let contents: String = ""
     
         Network.makeAnimeImage()
 //        if let url = URL(string: "https://www.google.com") {
