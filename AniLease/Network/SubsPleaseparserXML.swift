@@ -1,27 +1,25 @@
 //
-//  EraiRawsParserXML.swift
+//  SubsPleaseparserXML.swift
 //  AniLease
 //
-//  Created by VironIT on 23.08.22.
+//  Created by VironIT on 24.08.22.
 //
 
 import Foundation
 
-class EraiRawsParserXML: NSObject, XMLParserDelegate {
+class SubsPleaseParserXML: NSObject, XMLParserDelegate {
     
-    private var item: [EraiRawsRSS] = []
-    private var completion: (([EraiRawsRSS]) -> Void)?
+    private var item: [SubsPleaseRSS] = []
+    private var completion: (([SubsPleaseRSS]) -> Void)?
     private let strParser = StringParser()
     
     private var elementName = ""
     private var element = ""
     private var title = ""
     private var pubDate = ""
-    private var subtitles = ""
-    private var category = ""
     private var episodes = ""
     
-    func getEraiRawsItem (_ url: URL, completion: (([EraiRawsRSS]) -> Void)?) {
+    func getEraiRawsItem (_ url: URL, completion: (([SubsPleaseRSS]) -> Void)?) {
         self.completion = completion
         let session = URLSession.shared
         let task = session.dataTask(with: url) { [unowned self](data, response, error)  in
@@ -46,18 +44,15 @@ class EraiRawsParserXML: NSObject, XMLParserDelegate {
         if elementName == "item" {
             title = ""
             pubDate = ""
-            subtitles = ""
-            category = ""
             episodes = ""
         }
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         switch element {
-        case "title": title += string
+        case "category": title += string
         case "pubDate": pubDate += string
-        case "erai:subtitles": subtitles += string
-        case "erai:category": category += string
+        case "title": episodes += string
         default: break
         }
     }
@@ -69,9 +64,7 @@ class EraiRawsParserXML: NSObject, XMLParserDelegate {
             dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss Z"
             dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
             let time = dateFormatter.date(from: pubDate) ?? Date()
-            var newItem = EraiRawsRSS(title: title, pubDate: time, subtitles: subtitles, category: category, episods: strParser.getERAndSPEpisods(title))
-            let newTitle = strParser.getNameToEraiRaws(newItem)
-            newItem.title = newTitle
+            let newItem = SubsPleaseRSS(title: strParser.getNameToSubsPlease(title), pubDate: time, episods: strParser.getERAndSPEpisods(episodes))
             item.append(newItem)
         }
     }

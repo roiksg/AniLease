@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     private var viewModel: MainViewModel!
     
     private var cellIdentifiers: String = ""
-    private let strParser: StringParser = StringParser()
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -13,6 +13,7 @@ struct LiveChartRSS {
     var pubDate: Date
     var category: String
     var imageURL: String
+    var episods: String
 }
 
 struct EraiRawsRSS {
@@ -20,4 +21,11 @@ struct EraiRawsRSS {
     var pubDate: Date
     var subtitles: String
     var category: String
+    var episods: String
+}
+
+struct SubsPleaseRSS {
+    var title: String
+    var pubDate: Date
+    var episods: String
 }

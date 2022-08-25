@@ -110,7 +110,41 @@ class StringParser {
                 textValue += String($0)
             }
         }
-        textValue.removeFirst()
+        if !textValue.isEmpty {
+            textValue.removeFirst()
+        }
         return textValue
+    }
+    
+    func getNameAndEpisod(_ text: String) -> (String, String) {
+        let num = getLiveChartEpisods(text)
+        var title = text
+        if num.isEmpty {
+            return (title, "")
+        }
+        else {
+            let x = num.count + 2
+            title.removeLast(x)
+            return (title, num)
+        }
+    }
+    
+    func getNameToSubsPlease(_ text: String) -> String {
+        var title = text
+        title.removeLast(7)
+        return title
+    }
+    
+    func getNameToEraiRaws (_ element: EraiRawsRSS) -> String {
+        
+        var title = element.title
+        var cutValue = element.subtitles.count + element.category.count + 10
+        if title.contains("(Uncut)") {
+            cutValue += 8
+        }
+        title.removeFirst(10)
+        title.removeLast(cutValue)
+        
+        return title
     }
 }
