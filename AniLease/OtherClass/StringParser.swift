@@ -138,10 +138,7 @@ class StringParser {
     func getNameToEraiRaws (_ element: EraiRawsRSS) -> String {
         
         var title = element.title
-        var cutValue = element.subtitles.count + element.category.count + 10
-        if title.contains("(Uncut)") {
-            cutValue += 8
-        }
+        let cutValue = element.subtitles.count + element.category.count + 10 + element.episods.count
         title.removeFirst(10)
         title.removeLast(cutValue)
         

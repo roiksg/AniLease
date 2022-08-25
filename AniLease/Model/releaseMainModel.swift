@@ -9,9 +9,8 @@ import Foundation
 
 struct ReleaseMainModel {
     let name: String
-    let JpEnName: String
     let image: String
     let time: Int
     let Episod: String
-    let ID: String
+    let ID: Int
 }

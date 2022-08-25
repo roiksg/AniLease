@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     private var viewModel: MainViewModel!
     
-    private var cellIdentifiers: String = ""
+    private var cellIdentifiers: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()

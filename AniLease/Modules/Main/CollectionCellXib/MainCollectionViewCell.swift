@@ -32,7 +32,7 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     private var globalTime: Int = 0
     
-    private var releaseID: String?
+    private var releaseID: Int?
     
     static let identifiers = "releaseCell"
     
@@ -76,9 +76,7 @@ class MainCollectionViewCell: UICollectionViewCell {
         let (dd, hh, mm , ss) = getTime(time: globalTime)
         
         titleName.text = releaseMainModel.name
-        titleJpEnName.text = releaseMainModel.JpEnName
         episod.text = releaseMainModel.Episod
-//        titleImage.image = UIImage(named: releaseMainModel.image)
         let url = URL(string: releaseMainModel.image)
         titleImage.kf.setImage(with: url)
         self.days.text = String(dd)

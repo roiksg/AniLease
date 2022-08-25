@@ -14,20 +14,4 @@ class ReleaseInfoModel {
     init (_ vc: ReleaseInfoController) {
         controller = vc
     }
-    func network() -> String {
-        let contents: String = ""
-    
-        Network.makeAnimeImage()
-//        if let url = URL(string: "https://www.google.com") {
-//            do {
-//                contents = try String(contentsOf: url)
-//                print(contents)
-//            } catch {
-//                // contents could not be loaded
-//            }
-//        } else {
-//            // the URL was bad!
-//        }
-        return contents
-    }
 }

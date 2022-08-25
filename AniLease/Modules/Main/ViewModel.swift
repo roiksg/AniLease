@@ -6,14 +6,15 @@
 //
 
 import Foundation
-import CoreVideo
+import RealmSwift
 
 class MainViewModel {
     weak var controller: ViewController!
     
     private var release: [ReleaseMainModel] = []
-    private var item: [LiveChartRSS] = []
-    private var parser = LiveChartParserXML()
+    private var dataBase = DataBase()
+    private var item: [Anime] = []
+    private let realm = try! Realm()
     private var urlString = "https://www.livechart.me/feeds/episodes"
     
     init (_ vc: ViewController) {
@@ -23,7 +24,7 @@ class MainViewModel {
     
     func loadItemCell(){
         for item in self.item {
-            let element = ReleaseMainModel(name: item.title, JpEnName: item.link, image: item.imageURL, time: 0, Episod: "EP NONE", ID: "123")
+            let element = ReleaseMainModel(name: item.titleName, image: item.image, time: 0, Episod: item.episod.last?.episods ?? "EP NONE", ID: item.id)
             self.release.append(element)
         }
     }
@@ -37,14 +38,14 @@ class MainViewModel {
     }
     
     func parserLiveChartRSS() {
-        guard let url = URL(string: urlString) else {return}
-        parser.getLiveChartItem(url) { (item) in
-            self.item = item
-            
-            self.loadItemCell()
-            DispatchQueue.main.async {
-                self.controller.collectionRelease.reloadData()
+        let closure = { [unowned self] in
+            let anime = self.realm.objects(Anime.self)
+            for an in anime {
+                self.item.append(an)
             }
+            self.loadItemCell()
+            self.controller.collectionRelease.reloadData()
         }
+        dataBase.updateAnime(closure)
     }
 }

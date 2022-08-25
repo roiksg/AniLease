@@ -22,14 +22,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLf-1f-Xua">
-                        <rect key="frame" x="140" y="39.5" width="313" height="29"/>
-                        <string key="text">Jp Name
-En name</string>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EP 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOq-cv-2ur">
                         <rect key="frame" x="140" y="73" width="52.5" height="24"/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -108,10 +100,7 @@ En name</string>
                 <constraint firstItem="wf4-mf-2dX" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="AGc-wb-IlB"/>
                 <constraint firstItem="83h-te-7Mz" firstAttribute="leading" secondItem="wf4-mf-2dX" secondAttribute="trailing" constant="10" id="Ign-e7-91P"/>
                 <constraint firstItem="eOq-cv-2ur" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="L0T-Dw-YDC"/>
-                <constraint firstItem="gLf-1f-Xua" firstAttribute="leading" secondItem="wf4-mf-2dX" secondAttribute="trailing" constant="10" id="Pkb-eg-zCS"/>
                 <constraint firstAttribute="bottom" secondItem="wf4-mf-2dX" secondAttribute="bottom" id="QIO-1L-yL3"/>
-                <constraint firstAttribute="trailing" secondItem="gLf-1f-Xua" secondAttribute="trailing" constant="12" id="RDn-Qf-xWK"/>
-                <constraint firstItem="gLf-1f-Xua" firstAttribute="top" secondItem="83h-te-7Mz" secondAttribute="bottom" id="Y4K-4o-dqS"/>
                 <constraint firstItem="83h-te-7Mz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="18.5" id="fqx-st-BI4"/>
                 <constraint firstItem="eOq-cv-2ur" firstAttribute="leading" secondItem="wf4-mf-2dX" secondAttribute="trailing" constant="10" id="ier-Ym-f9P"/>
                 <constraint firstAttribute="trailing" secondItem="83h-te-7Mz" secondAttribute="trailing" constant="12" id="v3g-J9-3Sl"/>
@@ -124,7 +113,6 @@ En name</string>
                 <outlet property="minutes" destination="0RV-3c-wbY" id="6jB-pY-V5b"/>
                 <outlet property="seconds" destination="bp8-Qk-e4U" id="ine-Bx-pxk"/>
                 <outlet property="titleImage" destination="wf4-mf-2dX" id="b1W-Gg-ueG"/>
-                <outlet property="titleJpEnName" destination="gLf-1f-Xua" id="9JL-3h-gfd"/>
                 <outlet property="titleName" destination="83h-te-7Mz" id="TqN-HS-Osg"/>
             </connections>
             <point key="canvasLocation" x="-54" y="128"/>
