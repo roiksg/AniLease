@@ -36,6 +36,7 @@ class DataBase {
                             newAnime.link = curent.link
                             newAnime.image = curent.imageURL
                             newAnime.pubDate = curent.pubDate
+                            newAnime.category = curent.category
                             let newEpisods = AnimeEpisods()
                             newEpisods.id = newEpisods.IncrementaID()
                             newEpisods.pubDate = curent.pubDate
@@ -47,6 +48,7 @@ class DataBase {
                     }
                     else {
                         let episods = realm.objects(AnimeEpisods.self)
+                        let strParser = StringParser()
                         var eps = episods.where {
                             $0.episods == curent.episods
                         }.first
@@ -61,7 +63,9 @@ class DataBase {
                             obj!.image = curent.imageURL
                             obj!.pubDate = curent.pubDate
                             obj!.link = curent.link
-                            obj!.episod.append(eps!)
+                            if obj!.episod.last?.episods !=  strParser.intEpisodNumber(eps!.episods){
+                                obj!.episod.append(eps!)
+                            }
                             realm.add(eps!)
                             realm.add(obj!)
                         }

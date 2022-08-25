@@ -144,4 +144,17 @@ class StringParser {
         
         return title
     }
+    func intEpisodNumber(_ text: String) -> String {
+        var newText = text
+        if newText.contains("(Uncut)") {
+            newText.removeLast(8)
+        }
+        while newText.first == "0"{
+            newText.removeFirst()
+        }
+        while newText.last == " "{
+            newText.removeLast()
+        }
+        return newText
+    }
 }

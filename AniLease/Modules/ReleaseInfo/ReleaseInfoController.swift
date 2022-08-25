@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ReleaseInfoController: UIViewController {
     
+    @IBOutlet weak var lastEpisod: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var category: UILabel!
+    @IBOutlet weak var name: UILabel!
     private var viewModel: ReleaseInfoModel?
     
     @IBOutlet weak var descriptionText: UITextView!

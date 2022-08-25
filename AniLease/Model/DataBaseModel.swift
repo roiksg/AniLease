@@ -17,6 +17,7 @@ class Anime: Object {
     @Persisted var pubDate: Date
     @Persisted var image: String
     @Persisted var refreshTime: Int?
+    @Persisted var category: String?
     @Persisted var episod: List<AnimeEpisods>
     
     func IncrementaID() -> Int{
