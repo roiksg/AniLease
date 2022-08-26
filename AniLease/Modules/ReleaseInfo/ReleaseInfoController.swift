@@ -17,35 +17,37 @@ class ReleaseInfoController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var name: UILabel!
     private var viewModel: ReleaseInfoModel?
     
-    @IBOutlet weak var descriptionText: UITextView!
     var identifier: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = ReleaseInfoModel(self)
-//        self.episodCollection.dataSource = self
-//        self.episodCollection.delegate = self
+        self.episodCollection.dataSource = self
+        self.episodCollection.delegate = self
         self.episodCollection.register(.init(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ReleaseInfoCollectionCell.identifier)
         // Do any additional setup after loading the view.
     }
     
 }
 
-//extension ViewController: UICollectionViewDelegate {}
-//
-//extension ReleaseInfoController: UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return viewModel.releaseCount()
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifiers, for: indexPath) as! MainCollectionViewCell
-//        collectionCell.configureXib(viewModel.returnCellModel()[indexPath.row])
-//        collectionCell.segue = { [unowned self] in
-//            self.cellIdentifiers = self.viewModel.returnCellModel()[indexPath.row].ID
-//            self.performSegue(withIdentifier: "ReleaseInfoVCsegue", sender: self)
-//        }
-//
-//        return collectionCell
-//    }
-//}
+extension ReleaseInfoController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel!.releaseCount()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: ReleaseInfoCollectionCell.identifier, for: indexPath) as! ReleaseInfoCollectionCell
+        collectionCell.configureXib(viewModel!.returnCellModel()[indexPath.row])
+        return collectionCell
+    }
+}
+
+extension ReleaseInfoController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: view.frame.width, height: 250)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+}

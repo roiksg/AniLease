@@ -36,8 +36,8 @@ class AnimeEpisods: Object {
     @Persisted(primaryKey: true) var id: Int
     @Persisted var episods: String
     @Persisted var pubDate: Date
-    @Persisted var ERE: List<EraiRawsEpisods>
-    @Persisted var SPE: List<SubsPleaseEpisods>
+    @Persisted var ERE: EraiRawsEpisods?
+    @Persisted var SPE: SubsPleaseEpisods?
     
     func IncrementaID() -> Int{
         let realm = try! Realm()

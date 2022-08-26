@@ -7,13 +7,19 @@
 
 import Foundation
 
+struct Info {
+    var episod: EpisodInfo
+    var eraiRaws: EraiRawsEpisodInfo
+    var subsPlease: SubsPleaseEpisodInfo
+}
+
 struct EpisodInfo {
     var episod: String
-    var pubdate: String
+    var pubdate: Date
 }
 
 struct EraiRawsEpisodInfo {
-    var pubDate: Date
+    var pubDate: String
     var status: String
     var Episod: String
     var subtitles: String

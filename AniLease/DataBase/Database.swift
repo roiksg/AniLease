@@ -204,7 +204,7 @@ class DataBase {
         }.first
         if curentAnime != nil {
             try! realm.write {
-                curentAnime?.episod.last?.ERE.append(episod)
+                curentAnime?.episod.last?.ERE = episod
                 curentAnime?.ERName = er.titleName
                 realm.add(curentAnime!)
             }
@@ -219,10 +219,56 @@ class DataBase {
         }.first
         if curentAnime != nil {
             try! realm.write {
-                curentAnime!.episod.last?.SPE.append(episod)
+                curentAnime!.episod.last?.SPE = episod
                 curentAnime!.SPName = sp.titleName
                 realm.add(curentAnime!)
             }
         }
+    }
+    
+    func getEpisod(_ id: Int) -> [AnimeEpisods] {
+        let realm = try! Realm()
+        let anime = realm.objects(Anime.self)
+        let curentAnime = anime.where{
+            $0.id == id
+        }.first
+        let episod: [AnimeEpisods] = Array(curentAnime!.episod)
+        return episod
+    }
+    
+    func getInfoModel(_ id: Int) -> [Info] {
+        let realm = try! Realm()
+        var info: [Info] = []
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss"
+        let anime = realm.objects(Anime.self)
+        let curentAnime = anime.where{
+            $0.id == id
+        }.first
+        let episods = curentAnime?.episod
+        episods?.forEach {
+            
+            var date: String
+            var eraiRawsEpisodInfo: EraiRawsEpisodInfo
+            var subsPleaseEpisodInfo: SubsPleaseEpisodInfo
+            if $0.ERE == nil {
+                eraiRawsEpisodInfo = EraiRawsEpisodInfo(pubDate: "Non", status: "Non", Episod: "", subtitles: "")
+            }
+            else {
+                date = dateFormatter.string(from: $0.ERE!.pubDate)
+                eraiRawsEpisodInfo = EraiRawsEpisodInfo(pubDate: date, status: "Good", Episod: $0.ERE!.episods, subtitles: $0.ERE!.subtitles)
+            }
+            if $0.SPE == nil {
+                subsPleaseEpisodInfo = SubsPleaseEpisodInfo(pubDate: "Non", episod: "", status: "Non")
+            }
+            else {
+                date = dateFormatter.string(from: $0.SPE!.pubDate)
+                subsPleaseEpisodInfo = SubsPleaseEpisodInfo(pubDate: date, episod: $0.SPE!.episods, status: "Good")
+            }
+            
+            let episodInfo = EpisodInfo(episod: $0.episods, pubdate: $0.pubDate)
+            info.append(Info(episod: episodInfo, eraiRaws: eraiRawsEpisodInfo, subsPlease: subsPleaseEpisodInfo))
+        }
+        return info
     }
 }

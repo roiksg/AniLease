@@ -11,14 +11,19 @@ import RealmSwift
 class ReleaseInfoModel {
     
     private var id: Int!
+    private var dataBase = DataBase()
     private var realm = try! Realm()
+    private var animeEpisods: [AnimeEpisods]!
+    private var info: [Info]!
     
     weak var controller: ReleaseInfoController!
     
     init (_ vc: ReleaseInfoController) {
         controller = vc
         id = vc.identifier
+        animeEpisods = dataBase.getEpisod(id)
         loadDate()
+        info  = dataBase.getInfoModel(id)
     }
     
     func loadDate() {
@@ -33,11 +38,11 @@ class ReleaseInfoModel {
         controller.lastEpisod.text = curentAnime.episod.last?.episods
     }
     
-//    func releaseCount() -> Int{
-//        release.count
-//    }
-//
-//    func returnCellModel() -> [ReleaseMainModel] {
-//        release
-//    }
+    func releaseCount() -> Int{
+        animeEpisods.count
+    }
+
+    func returnCellModel() -> [Info] {
+        info
+    }
 }
