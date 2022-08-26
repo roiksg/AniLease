@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		531DAADA28B8B12F0052FED1 /* ReleaseInfoCellModell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531DAAD928B8B12F0052FED1 /* ReleaseInfoCellModell.swift */; };
 		5349E30728B36EAF00D14A99 /* XMLstructModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349E30628B36EAF00D14A99 /* XMLstructModel.swift */; };
 		5349E30928B3786300D14A99 /* liveChartParserXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349E30828B3786300D14A99 /* liveChartParserXML.swift */; };
 		535DD6A728B4C55700A8D1D2 /* EraiRawsParserXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535DD6A628B4C55700A8D1D2 /* EraiRawsParserXML.swift */; };
@@ -17,8 +18,6 @@
 		5366D9AF28B636700013DBB6 /* SubsPleaseparserXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366D9AE28B636700013DBB6 /* SubsPleaseparserXML.swift */; };
 		5366D9B328B638D70013DBB6 /* ReleaseInfoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366D9B128B638D70013DBB6 /* ReleaseInfoCollectionCell.swift */; };
 		5366D9B428B638D70013DBB6 /* ReleaseInfoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5366D9B228B638D70013DBB6 /* ReleaseInfoCollectionCell.xib */; };
-		5366D9B728B63BB80013DBB6 /* secondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366D9B528B63BB80013DBB6 /* secondCell.swift */; };
-		5366D9B828B63BB80013DBB6 /* secondCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5366D9B628B63BB80013DBB6 /* secondCell.xib */; };
 		536B2A3C28AE19260093B42C /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536B2A3A28AE19260093B42C /* MainCollectionViewCell.swift */; };
 		536B2A3D28AE19260093B42C /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 536B2A3B28AE19260093B42C /* MainCollectionViewCell.xib */; };
 		536B2A4028AE355B0093B42C /* ReleaseMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536B2A3F28AE355B0093B42C /* ReleaseMainModel.swift */; };
@@ -38,6 +37,7 @@
 /* Begin PBXFileReference section */
 		290DE3FC22C3BA90C2504057 /* Pods_AniLease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AniLease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D805E4979BF73CB16D858C9 /* Pods-AniLease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AniLease.debug.xcconfig"; path = "Target Support Files/Pods-AniLease/Pods-AniLease.debug.xcconfig"; sourceTree = "<group>"; };
+		531DAAD928B8B12F0052FED1 /* ReleaseInfoCellModell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseInfoCellModell.swift; sourceTree = "<group>"; };
 		5349E30628B36EAF00D14A99 /* XMLstructModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLstructModel.swift; sourceTree = "<group>"; };
 		5349E30828B3786300D14A99 /* liveChartParserXML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = liveChartParserXML.swift; sourceTree = "<group>"; };
 		5349E30A28B3A74700D14A99 /* release.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = release.xml; sourceTree = "<group>"; };
@@ -49,8 +49,6 @@
 		5366D9AE28B636700013DBB6 /* SubsPleaseparserXML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubsPleaseparserXML.swift; sourceTree = "<group>"; };
 		5366D9B128B638D70013DBB6 /* ReleaseInfoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseInfoCollectionCell.swift; sourceTree = "<group>"; };
 		5366D9B228B638D70013DBB6 /* ReleaseInfoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReleaseInfoCollectionCell.xib; sourceTree = "<group>"; };
-		5366D9B528B63BB80013DBB6 /* secondCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondCell.swift; sourceTree = "<group>"; };
-		5366D9B628B63BB80013DBB6 /* secondCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = secondCell.xib; sourceTree = "<group>"; };
 		536B2A3A28AE19260093B42C /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		536B2A3B28AE19260093B42C /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
 		536B2A3F28AE355B0093B42C /* ReleaseMainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseMainModel.swift; sourceTree = "<group>"; };
@@ -103,8 +101,6 @@
 			children = (
 				5366D9B128B638D70013DBB6 /* ReleaseInfoCollectionCell.swift */,
 				5366D9B228B638D70013DBB6 /* ReleaseInfoCollectionCell.xib */,
-				5366D9B528B63BB80013DBB6 /* secondCell.swift */,
-				5366D9B628B63BB80013DBB6 /* secondCell.xib */,
 			);
 			path = collectionCellXib;
 			sourceTree = "<group>";
@@ -124,6 +120,7 @@
 				5366D9A828B6069F0013DBB6 /* DataBaseModel.swift */,
 				536B2A3F28AE355B0093B42C /* ReleaseMainModel.swift */,
 				5349E30628B36EAF00D14A99 /* XMLstructModel.swift */,
+				531DAAD928B8B12F0052FED1 /* ReleaseInfoCellModell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,7 +288,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				53E8B7C728ACEDE900DDEFB3 /* LaunchScreen.storyboard in Resources */,
-				5366D9B828B63BB80013DBB6 /* secondCell.xib in Resources */,
 				5366D9B428B638D70013DBB6 /* ReleaseInfoCollectionCell.xib in Resources */,
 				53E8B7C428ACEDE900DDEFB3 /* Assets.xcassets in Resources */,
 				53E8B7C228ACEDE600DDEFB3 /* Main.storyboard in Resources */,
@@ -354,13 +350,13 @@
 				5366D9AF28B636700013DBB6 /* SubsPleaseparserXML.swift in Sources */,
 				535DD6AA28B4CB7700A8D1D2 /* StringParser.swift in Sources */,
 				5366D9AB28B621BA0013DBB6 /* Database.swift in Sources */,
+				531DAADA28B8B12F0052FED1 /* ReleaseInfoCellModell.swift in Sources */,
 				5349E30728B36EAF00D14A99 /* XMLstructModel.swift in Sources */,
 				53E8B7BB28ACEDE600DDEFB3 /* AppDelegate.swift in Sources */,
 				5366D9A928B6069F0013DBB6 /* DataBaseModel.swift in Sources */,
 				536B2A3C28AE19260093B42C /* MainCollectionViewCell.swift in Sources */,
 				53E8B7D228AD07A000DDEFB3 /* ViewModel.swift in Sources */,
 				5366D9B328B638D70013DBB6 /* ReleaseInfoCollectionCell.swift in Sources */,
-				5366D9B728B63BB80013DBB6 /* secondCell.swift in Sources */,
 				536B2A4028AE355B0093B42C /* ReleaseMainModel.swift in Sources */,
 				53E8B7BD28ACEDE600DDEFB3 /* SceneDelegate.swift in Sources */,
 				5349E30928B3786300D14A99 /* liveChartParserXML.swift in Sources */,

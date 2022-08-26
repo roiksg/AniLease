@@ -10,7 +10,7 @@ import RealmSwift
 
 
 class Anime: Object {
-    @Persisted var id: Int
+    @Persisted(primaryKey: true) var id: Int
     @Persisted var titleName: String
     @Persisted var link: String
     @Persisted var episodsCount: Int?
@@ -18,6 +18,8 @@ class Anime: Object {
     @Persisted var image: String
     @Persisted var refreshTime: Int?
     @Persisted var category: String?
+    @Persisted var ERName: String?
+    @Persisted var SPName: String?
     @Persisted var episod: List<AnimeEpisods>
     
     func IncrementaID() -> Int{
@@ -31,11 +33,11 @@ class Anime: Object {
 }
 
 class AnimeEpisods: Object {
-    @Persisted var id: Int
+    @Persisted(primaryKey: true) var id: Int
     @Persisted var episods: String
     @Persisted var pubDate: Date
-    @Persisted var ERE: EraiRaws?
-    @Persisted var SPE: SubsPlease?
+    @Persisted var ERE: List<EraiRawsEpisods>
+    @Persisted var SPE: List<SubsPleaseEpisods>
     
     func IncrementaID() -> Int{
         let realm = try! Realm()
@@ -48,7 +50,7 @@ class AnimeEpisods: Object {
 }
 
 class EraiRaws: Object {
-    @Persisted var id: Int
+    @Persisted(primaryKey: true) var id: Int
     @Persisted var titleName: String
     @Persisted var episods: List<EraiRawsEpisods>
     
@@ -63,7 +65,7 @@ class EraiRaws: Object {
 }
 
 class SubsPlease: Object {
-    @Persisted var id: Int
+    @Persisted(primaryKey: true) var id: Int
     @Persisted var titleName: String
     @Persisted var episods: List<SubsPleaseEpisods>
     

@@ -32,4 +32,12 @@ class ReleaseInfoModel {
         controller.category.text = curentAnime.category
         controller.lastEpisod.text = curentAnime.episod.last?.episods
     }
+    
+//    func releaseCount() -> Int{
+//        release.count
+//    }
+//
+//    func returnCellModel() -> [ReleaseMainModel] {
+//        release
+//    }
 }

@@ -8,6 +8,8 @@
 import UIKit
 
 class ReleaseInfoCollectionCell: UICollectionViewCell {
+    
+    static let identifier = "releaseInfoCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()

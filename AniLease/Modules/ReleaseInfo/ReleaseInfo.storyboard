@@ -142,6 +142,7 @@
                     <size key="freeformSize" width="414" height="1132"/>
                     <connections>
                         <outlet property="category" destination="y7P-O2-gJr" id="C6h-U9-gUq"/>
+                        <outlet property="episodCollection" destination="sMK-fE-BPY" id="EiM-7S-MrY"/>
                         <outlet property="image" destination="WYT-Ib-oCT" id="9sd-vD-mof"/>
                         <outlet property="lastEpisod" destination="tmW-aB-kv1" id="jZn-Ll-Rs0"/>
                         <outlet property="name" destination="S4r-xD-Yae" id="PQK-FA-ecc"/>
