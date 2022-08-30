@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Or Edit Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="AddOrEditController" customModule="AniLease" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xvG-rU-luk">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="Title" id="Mcv-La-Oxe">
+                                        <barButtonItem key="leftBarButtonItem" image="arrow.backward" catalog="system" id="Njn-FG-spP">
+                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <segue destination="Fax-Cr-791" kind="unwind" unwindAction="unwindReleaseInfo:" id="gjT-rG-GMB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WwD-Ij-rXG">
+                                <rect key="frame" x="0.0" y="88" width="207" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EraiRaws" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ef3-QN-lWz">
+                                        <rect key="frame" x="43.5" y="13.5" width="120.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="Ef3-QN-lWz" firstAttribute="centerY" secondItem="WwD-Ij-rXG" secondAttribute="centerY" id="OIi-3o-Pbe"/>
+                                    <constraint firstAttribute="height" constant="60" id="W6P-hZ-BTo"/>
+                                    <constraint firstItem="Ef3-QN-lWz" firstAttribute="centerX" secondItem="WwD-Ij-rXG" secondAttribute="centerX" id="eFi-IM-m5g"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="9A3-BA-int" appends="YES" id="TUf-DH-Z45"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SRm-i6-Ra8">
+                                <rect key="frame" x="207" y="88" width="207" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubsPlease" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fz-Xr-347">
+                                        <rect key="frame" x="26.5" y="13.5" width="154" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="207" id="LE6-Bz-YP2"/>
+                                    <constraint firstAttribute="height" constant="60" id="UXm-oe-sEp"/>
+                                    <constraint firstItem="9fz-Xr-347" firstAttribute="centerY" secondItem="SRm-i6-Ra8" secondAttribute="centerY" id="YwY-eh-HSj"/>
+                                    <constraint firstItem="9fz-Xr-347" firstAttribute="centerX" secondItem="SRm-i6-Ra8" secondAttribute="centerX" id="lWR-Le-F2T"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="dPk-p8-xfn" appends="YES" id="BFd-TM-ZKG"/>
+                                </connections>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Oh0-gc-ypz">
+                                <rect key="frame" x="0.0" y="165" width="414" height="705"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7ua-IQ-9Fl">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Oh0-gc-ypz" secondAttribute="bottom" constant="26" id="AHj-kz-Ttw"/>
+                            <constraint firstItem="Oh0-gc-ypz" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="AbZ-Ai-Xcc"/>
+                            <constraint firstItem="xvG-rU-luk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="HV2-qH-CSh"/>
+                            <constraint firstItem="WwD-Ij-rXG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="JBY-I5-OVs"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SRm-i6-Ra8" secondAttribute="trailing" id="KnJ-b1-NzD"/>
+                            <constraint firstItem="SRm-i6-Ra8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="207" id="KwL-kU-qAc"/>
+                            <constraint firstItem="xvG-rU-luk" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="XXx-N2-8hk"/>
+                            <constraint firstItem="SRm-i6-Ra8" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44" id="Y4r-3U-hES"/>
+                            <constraint firstItem="WwD-Ij-rXG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44" id="d7j-fg-5bh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WwD-Ij-rXG" secondAttribute="trailing" constant="207" id="kYj-Xv-fJm"/>
+                            <constraint firstItem="Oh0-gc-ypz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kyp-0g-CsE"/>
+                            <constraint firstItem="Oh0-gc-ypz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="121" id="yC1-q0-0Z6"/>
+                            <constraint firstItem="xvG-rU-luk" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="z95-W7-s0D"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionEpisod" destination="Oh0-gc-ypz" id="hoK-XD-XuJ"/>
+                        <outlet property="eraiRawsView" destination="WwD-Ij-rXG" id="Ect-z6-P4a"/>
+                        <outlet property="subsPleaseView" destination="SRm-i6-Ra8" id="N2v-Zp-bGx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Fax-Cr-791" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="9A3-BA-int" userLabel="EraiRawsTap">
+                    <connections>
+                        <action selector="eraiRawsTap:" destination="Y6W-OH-hqX" id="1WC-AF-7VQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="dPk-p8-xfn" userLabel="SubsPleaseTap">
+                    <connections>
+                        <action selector="subsPleaseTap:" destination="Y6W-OH-hqX" id="Hbh-Yz-ceK"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="92.753623188405811" y="85.714285714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+    </resources>
+</document>

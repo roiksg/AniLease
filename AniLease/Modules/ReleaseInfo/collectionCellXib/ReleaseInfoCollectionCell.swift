@@ -17,7 +17,7 @@ class ReleaseInfoCollectionCell: UICollectionViewCell {
     @IBOutlet weak var subsPleaseEpisod: UILabel!
     @IBOutlet weak var subsPleaseStatus: UILabel!
     @IBOutlet weak var subsPleaseDate: UILabel!
-    static let identifier = "releaseInfoCell"
+    static let identifier = "EpisodsInfoCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()

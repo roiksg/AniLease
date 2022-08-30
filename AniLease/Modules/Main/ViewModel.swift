@@ -19,7 +19,7 @@ class MainViewModel {
     
     init (_ vc: ViewController) {
         controller = vc
-        self.parserLiveChartRSS()
+        parserLiveChartRSS()
     }
     
     func loadItemCell(){

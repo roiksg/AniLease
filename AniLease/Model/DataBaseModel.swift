@@ -52,6 +52,7 @@ class AnimeEpisods: Object {
 class EraiRaws: Object {
     @Persisted(primaryKey: true) var id: Int
     @Persisted var titleName: String
+    @Persisted var connect: Bool?
     @Persisted var episods: List<EraiRawsEpisods>
     
     func IncrementaID() -> Int{
@@ -67,6 +68,7 @@ class EraiRaws: Object {
 class SubsPlease: Object {
     @Persisted(primaryKey: true) var id: Int
     @Persisted var titleName: String
+    @Persisted var connect: Bool?
     @Persisted var episods: List<SubsPleaseEpisods>
     
     func IncrementaID() -> Int{

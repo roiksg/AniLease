@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -55,7 +54,7 @@
                                             </navigationBar>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sMK-fE-BPY">
                                                 <rect key="frame" x="10" y="445" width="394" height="599"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vk3-pt-Eb3">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -99,6 +98,16 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add or Edit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2iU-cN-fQA">
+                                                <rect key="frame" x="321" y="410" width="72" height="17"/>
+                                                <gestureRecognizers/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="NjJ-i5-0T2" appends="YES" id="7Xp-q3-Rvp"/>
+                                                </connections>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -111,10 +120,12 @@
                                             <constraint firstItem="WYT-Ib-oCT" firstAttribute="top" secondItem="S4r-xD-Yae" secondAttribute="bottom" constant="10" id="XqM-ml-gnu"/>
                                             <constraint firstAttribute="trailing" secondItem="S4r-xD-Yae" secondAttribute="trailing" constant="10" id="Zlf-e3-6oS"/>
                                             <constraint firstAttribute="bottom" secondItem="S4r-xD-Yae" secondAttribute="bottom" constant="968" id="aUS-Wj-1jG"/>
+                                            <constraint firstItem="2iU-cN-fQA" firstAttribute="leading" secondItem="hY5-M5-uE6" secondAttribute="leading" constant="321" id="bHK-uK-bn1"/>
                                             <constraint firstAttribute="bottom" secondItem="sMK-fE-BPY" secondAttribute="bottom" constant="10" id="cam-vz-8dU"/>
                                             <constraint firstItem="ERY-HD-Pan" firstAttribute="leading" secondItem="hY5-M5-uE6" secondAttribute="leading" id="jco-K5-eYC"/>
                                             <constraint firstItem="sMK-fE-BPY" firstAttribute="leading" secondItem="hY5-M5-uE6" secondAttribute="leading" constant="10" id="lyD-Ea-vze"/>
                                             <constraint firstItem="WYT-Ib-oCT" firstAttribute="leading" secondItem="hY5-M5-uE6" secondAttribute="leading" constant="10" id="mas-XA-ksv"/>
+                                            <constraint firstItem="sMK-fE-BPY" firstAttribute="top" secondItem="2iU-cN-fQA" secondAttribute="bottom" constant="18" id="meK-Ag-Ox1"/>
                                             <constraint firstAttribute="bottom" secondItem="WYT-Ib-oCT" secondAttribute="bottom" constant="759" id="nYC-DA-Xw1"/>
                                             <constraint firstItem="ERY-HD-Pan" firstAttribute="top" secondItem="hY5-M5-uE6" secondAttribute="top" id="zdQ-FQ-yPe"/>
                                             <constraint firstAttribute="trailing" secondItem="sMK-fE-BPY" secondAttribute="trailing" constant="10" id="zfB-B7-ELH"/>
@@ -146,20 +157,31 @@
                         <outlet property="image" destination="WYT-Ib-oCT" id="9sd-vD-mof"/>
                         <outlet property="lastEpisod" destination="tmW-aB-kv1" id="jZn-Ll-Rs0"/>
                         <outlet property="name" destination="S4r-xD-Yae" id="PQK-FA-ecc"/>
+                        <segue destination="qAw-xM-JhH" kind="presentation" identifier="AddOrEditSegue" id="LtK-Ys-SXZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="wXn-Jy-rf2" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="NjJ-i5-0T2">
+                    <connections>
+                        <action selector="showAddOrEdit:" destination="Y6W-OH-hqX" id="cTm-Ic-x8B"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="108.69565217391305" y="162.72321428571428"/>
+        </scene>
+        <!--AddOrEditConnection-->
+        <scene sceneID="VEM-FK-ETj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddOrEditConnection" id="qAw-xM-JhH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RtM-nt-Jb2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="767" y="92"/>
         </scene>
     </scenes>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="star" catalog="system" width="128" height="116"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

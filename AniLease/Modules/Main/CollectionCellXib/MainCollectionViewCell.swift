@@ -48,7 +48,6 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     @objc func tapToLabelCell () {
         segue!()
-        print("tap")
     }
     
     @objc private func timerInterval() {

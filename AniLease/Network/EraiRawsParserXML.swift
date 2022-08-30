@@ -28,6 +28,11 @@ class EraiRawsParserXML: NSObject, XMLParserDelegate {
             if let error = error {
                 print(error.localizedDescription)
             }
+            
+            if let httpResponse = response as? HTTPURLResponse{
+                print("MYLOG \(httpResponse.statusCode)")
+            }
+            
             if let data = data {
                 let parser = XMLParser(data: data)
                 parser.delegate = self
@@ -65,13 +70,16 @@ class EraiRawsParserXML: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "item" {
             let dateFormatter = DateFormatter()
+            pubDate.removeLast(2)
             // Sun, 21 Aug 2022 09:00:00 +0000
             dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss Z"
-            dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
             let time = dateFormatter.date(from: pubDate) ?? Date()
+            title = title.replacingOccurrences(of: "(V2) ", with: "")
             var newItem = EraiRawsRSS(title: title, pubDate: time, subtitles: subtitles, category: category, episods: strParser.getERAndSPEpisods(title))
             let newTitle = strParser.getNameToEraiRaws(newItem)
             newItem.title = newTitle
+//            print("MYLOG: element \(newItem.title)
             item.append(newItem)
         }
     }

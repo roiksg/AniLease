@@ -23,7 +23,6 @@ class ReleaseInfoModel {
         id = vc.identifier
         animeEpisods = dataBase.getEpisod(id)
         loadDate()
-        info  = dataBase.getInfoModel(id)
     }
     
     func loadDate() {
@@ -36,6 +35,7 @@ class ReleaseInfoModel {
         controller.name.text = curentAnime.titleName
         controller.category.text = curentAnime.category
         controller.lastEpisod.text = curentAnime.episod.last?.episods
+        info  = dataBase.getInfoModel(id)
     }
     
     func releaseCount() -> Int{

@@ -19,7 +19,7 @@ class SubsPleaseParserXML: NSObject, XMLParserDelegate {
     private var pubDate = ""
     private var episodes = ""
     
-    func getEraiRawsItem (_ url: URL, completion: (([SubsPleaseRSS]) -> Void)?) {
+    func getSubsPleaseItem (_ url: URL, completion: (([SubsPleaseRSS]) -> Void)?) {
         self.completion = completion
         let session = URLSession.shared
         let task = session.dataTask(with: url) { [unowned self](data, response, error)  in
@@ -62,7 +62,7 @@ class SubsPleaseParserXML: NSObject, XMLParserDelegate {
             let dateFormatter = DateFormatter()
             // Sun, 21 Aug 2022 09:00:00 +0000
             dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss Z"
-            dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
             let time = dateFormatter.date(from: pubDate) ?? Date()
             let newItem = SubsPleaseRSS(title: strParser.getNameToSubsPlease(title), pubDate: time, episods: strParser.getERAndSPEpisods(episodes))
             item.append(newItem)

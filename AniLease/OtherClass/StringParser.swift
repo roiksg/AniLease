@@ -27,8 +27,19 @@ class StringParser {
         var episods: String = ""
         var i: Int = 0
         var x: Int = 0
+        var newText = text
         
-        text.forEach {
+        if (newText.contains("(HEVC-Uncut) ")){
+            newText = newText.replacingOccurrences(of: "(HEVC-Uncut) ", with: "")
+        }
+        if (newText.contains("(Uncut) ")) {
+            newText = newText.replacingOccurrences(of: "(Uncut) ", with: "")
+        }
+        if (newText.contains("(Japanese Names) ")) {
+            newText = newText.replacingOccurrences(of: "(Japanese Names) ", with: "")
+        }
+        
+        newText.forEach {
             if episods == "" {
                 if ($0 == stringFirst[i] && boolStringFirst == false) {
                     i += 1
@@ -100,7 +111,6 @@ class StringParser {
     func getLiveChartEpisods (_ text: String) -> String {
         var startWrite: Bool = false
         var textValue: String = ""
-        
         text.forEach {
             if $0 == "#" {
                 startWrite = true
@@ -136,11 +146,40 @@ class StringParser {
     }
     
     func getNameToEraiRaws (_ element: EraiRawsRSS) -> String {
-        
         var title = element.title
-        let cutValue = element.subtitles.count + element.category.count + 10 + element.episods.count
+        var cutValue = element.subtitles.count + element.category.count + element.episods.count
+        if element.episods == ""{
+            cutValue += 9
+        }
+        else {
+            cutValue += 10
+        }
+        
+        if title.contains("(HEVC-Uncut) ") {
+//            cutValue += 13
+            title = title.replacingOccurrences(of: "(HEVC-Uncut) ", with: "")
+        }
+        if title.contains("(Uncut) ") {
+//            cutValue += 8
+            title = title.replacingOccurrences(of: "(Uncut) ", with: "")
+        }
+        if title.contains("(HEVC) ") {
+//            cutValue += 7
+            title = title.replacingOccurrences(of: "(HEVC) ", with: "")
+        }
+        if (title.contains("(Japanese Names) ")) {
+            title = title.replacingOccurrences(of: "(Japanese Names) ", with: "")
+        }
+        if title.contains("(V2) ") {
+//            cutValue += 5
+            title = title.replacingOccurrences(of: "(V2) ", with: "")
+        }
         title.removeFirst(10)
         title.removeLast(cutValue)
+        
+        if title.last == " " {
+            title.removeLast()
+        }
         
         return title
     }
