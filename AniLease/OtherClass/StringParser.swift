@@ -156,22 +156,18 @@ class StringParser {
         }
         
         if title.contains("(HEVC-Uncut) ") {
-//            cutValue += 13
             title = title.replacingOccurrences(of: "(HEVC-Uncut) ", with: "")
         }
         if title.contains("(Uncut) ") {
-//            cutValue += 8
             title = title.replacingOccurrences(of: "(Uncut) ", with: "")
         }
         if title.contains("(HEVC) ") {
-//            cutValue += 7
             title = title.replacingOccurrences(of: "(HEVC) ", with: "")
         }
         if (title.contains("(Japanese Names) ")) {
             title = title.replacingOccurrences(of: "(Japanese Names) ", with: "")
         }
         if title.contains("(V2) ") {
-//            cutValue += 5
             title = title.replacingOccurrences(of: "(V2) ", with: "")
         }
         title.removeFirst(10)
