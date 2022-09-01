@@ -19,14 +19,14 @@ struct EpisodInfo {
 }
 
 struct EraiRawsEpisodInfo {
-    var pubDate: String
+    var pubDate: Date?
     var status: String
     var Episod: String
     var subtitles: String
 }
 
 struct SubsPleaseEpisodInfo {
-    var pubDate: String
+    var pubDate: Date?
     var episod: String
     var status: String
 }

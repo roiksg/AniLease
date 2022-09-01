@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class ViewController: UIViewController {
     @IBOutlet weak var collectionRelease: UICollectionView!
@@ -21,12 +20,6 @@ class ViewController: UIViewController {
         self.collectionRelease.dataSource = self
         self.collectionRelease.delegate = self
         self.collectionRelease.register(.init(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: MainCollectionViewCell.identifiers)
-        
-        let realm = try! Realm()
-        let x = realm.objects(SubsPlease.self)
-        x.forEach {
-            print("MYLOG: [\($0.titleName)] [\($0.connect)]")
-        }
         // Do any additional setup after loading the view.
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

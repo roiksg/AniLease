@@ -31,10 +31,20 @@ class ReleaseInfoCollectionCell: UICollectionViewCell {
         animeEpisod.text = info.episod.episod
         eraiRawsEpisod.text = info.eraiRaws.Episod
         eraiRawsStatus.text = info.eraiRaws.status
-        eraiRawsDate.text = info.eraiRaws.pubDate
+        if info.eraiRaws.pubDate == nil {
+            eraiRawsDate.text = ""
+        }
+        else {
+            eraiRawsDate.text = dateFormatter.string(from: info.eraiRaws.pubDate!)
+        }
         subsPleaseEpisod.text = info.subsPlease.episod
         subsPleaseStatus.text = info.subsPlease.status
-        subsPleaseDate.text = info.subsPlease.pubDate
+        if info.subsPlease.pubDate == nil {
+            subsPleaseDate.text = ""
+        }
+        else {
+            subsPleaseDate.text = dateFormatter.string(from: info.subsPlease.pubDate!)
+        }
     }
 
 }

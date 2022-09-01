@@ -25,7 +25,6 @@ class DataBase {
             DispatchQueue.main.async {
                 let realm = try! Realm()
                 let anime = realm.objects(Anime.self)
-                var id: Int
                 self.LCItem = item
                 self.LCItem.forEach { curent in
                     let obj = anime.where {
@@ -143,6 +142,7 @@ class DataBase {
                             realm.add(eps!)
                             realm.add(obj!)
                         }
+                        self.connectERToAnime(obj!, eps!)
                     }
                 }
                 self.updateSubsPlease()
@@ -205,6 +205,7 @@ class DataBase {
                             realm.add(eps!)
                             realm.add(obj!)
                         }
+                        self.connectSPToAnime(obj!, eps!)
                     }
                 }
             }
@@ -223,6 +224,7 @@ class DataBase {
                 let curEpisod = curentAnime?.episod.where {
                     $0.episods == episod.episods
                 }.first
+                print("MYLOG: [\(curentAnime!.episod.last!.episods)] [\(episod.episods)]")
                 curEpisod?.ERE = episod
                 curentAnime?.ERName = er.titleName
                 realm.add(er)
@@ -272,6 +274,7 @@ class DataBase {
         var info: [Info] = []
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss"
+//        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         let anime = realm.objects(Anime.self)
         let curentAnime = anime.where{
             $0.id == id
@@ -279,22 +282,19 @@ class DataBase {
         let episods = curentAnime?.episod
         episods?.forEach {
             
-            var date: String
             var eraiRawsEpisodInfo: EraiRawsEpisodInfo
             var subsPleaseEpisodInfo: SubsPleaseEpisodInfo
             if $0.ERE == nil {
-                eraiRawsEpisodInfo = EraiRawsEpisodInfo(pubDate: "Non", status: "Non", Episod: "", subtitles: "")
+                eraiRawsEpisodInfo = EraiRawsEpisodInfo(pubDate: nil, status: "Non", Episod: "", subtitles: "")
             }
             else {
-                date = dateFormatter.string(from: $0.ERE!.pubDate)
-                eraiRawsEpisodInfo = EraiRawsEpisodInfo(pubDate: date, status: "Good", Episod: $0.ERE!.episods, subtitles: $0.ERE!.subtitles)
+                eraiRawsEpisodInfo = EraiRawsEpisodInfo(pubDate: $0.ERE!.pubDate, status: "Good", Episod: $0.ERE!.episods, subtitles: $0.ERE!.subtitles)
             }
             if $0.SPE == nil {
-                subsPleaseEpisodInfo = SubsPleaseEpisodInfo(pubDate: "Non", episod: "", status: "Non")
+                subsPleaseEpisodInfo = SubsPleaseEpisodInfo(pubDate: nil, episod: "", status: "Non")
             }
             else {
-                date = dateFormatter.string(from: $0.SPE!.pubDate)
-                subsPleaseEpisodInfo = SubsPleaseEpisodInfo(pubDate: date, episod: $0.SPE!.episods, status: "Good")
+                subsPleaseEpisodInfo = SubsPleaseEpisodInfo(pubDate: $0.SPE!.pubDate, episod: $0.SPE!.episods, status: "Good")
             }
             
             let episodInfo = EpisodInfo(episod: $0.episods, pubdate: $0.pubDate)
@@ -324,7 +324,6 @@ class DataBase {
                     curentAnime!.ERName = eraiRaws!.titleName
                     realm.add(eraiRaws!)
                     realm.add(curentAnime!)
-                    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
                 }
             }
             let eraiRaws = realm.objects(EraiRaws.self)

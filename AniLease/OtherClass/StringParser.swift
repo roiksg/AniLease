@@ -190,6 +190,9 @@ class StringParser {
         while newText.last == " "{
             newText.removeLast()
         }
+        if newText.last == "\n" {
+            newText.removeLast()
+        }
         return newText
     }
 }
