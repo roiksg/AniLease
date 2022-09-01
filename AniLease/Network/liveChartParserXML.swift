@@ -71,7 +71,9 @@ class LiveChartParserXML: NSObject, XMLParserDelegate {
             // Sun, 21 Aug 2022 09:00:00 +0000
             dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss Z"
             dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-            let time = dateFormatter.date(from: "Tue, 30 Aug 2022 03:00:00 +0000")!
+            // "Tue, 30 Aug 2022 03:00:00 +0000"
+            pubDate.removeLast(7)
+            let time = dateFormatter.date(from: pubDate) ?? Date()
             let (titleName, episodes) = strParser.getNameAndEpisod(title)
             let newItem = LiveChartRSS(link: link, title: titleName, pubDate: time, category: category, imageURL: imageURL, episods: episodes)
             item.append(newItem)

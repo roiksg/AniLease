@@ -19,6 +19,10 @@ class AddOrEditModel {
     init (_ vc: AddOrEditController) {
         controller  = vc
         realm = try! Realm()
+        loadModel()
+    }
+    
+    func loadModel() {
         EREpisodModel()
         SPEpisodModel()
         controller.modelUpdate(er: eraiRawsCell, sp: subsPleaseCell)
@@ -30,7 +34,7 @@ class AddOrEditModel {
             $0.connect != true
         }
         eraiRaws.forEach {
-            eraiRawsCell.append(Cell(title: $0.titleName, lastepisod: $0.episods.last!.episods, date: $0.episods.last!.pubDate))
+            eraiRawsCell.append(Cell(id: $0.id, title: $0.titleName, lastepisod: $0.episods.last!.episods, date: $0.episods.last!.pubDate))
         }
     }
     
@@ -40,7 +44,20 @@ class AddOrEditModel {
             $0.connect != true
         }
         subsPlease.forEach {
-            subsPleaseCell.append(Cell(title: $0.titleName, lastepisod: $0.episods.last!.episods, date: $0.episods.last!.pubDate))
+            subsPleaseCell.append(Cell(id: $0.id, title: $0.titleName, lastepisod: $0.episods.last!.episods, date: $0.episods.last!.pubDate))
+        }
+    }
+    
+    func getContactInfo(id: Int, type: String) ->  String {
+        let anime = realm.objects(Anime.self)
+        let curentAnume = anime.where {
+            $0.id == id
+        }.first
+        if type == "EraiRaws" {
+            return curentAnume!.ERName ?? ""
+        }
+        else {
+            return curentAnume!.SPName ?? ""
         }
     }
 }

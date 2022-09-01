@@ -13,10 +13,17 @@ class EpisodCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var lastEpisod: UILabel!
     @IBOutlet private weak var date: UILabel!
     static let identifier = "EpisodCVC"
+    var closure: (() -> ())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        let touch = UITapGestureRecognizer(target: self, action: #selector(self.tapToCell))
+        self.addGestureRecognizer(touch)
         // Initialization code
+    }
+    
+    @objc func tapToCell () {
+        closure!()
     }
     
     func configureXib(_ type: String, _ title: String, _ lastEp: String, _ pubDate: Date) {

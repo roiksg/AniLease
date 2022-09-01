@@ -74,6 +74,7 @@ class EraiRawsParserXML: NSObject, XMLParserDelegate {
             // Sun, 21 Aug 2022 09:00:00 +0000
             dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss Z"
             dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            pubDate.removeLast(7)
             let time = dateFormatter.date(from: pubDate) ?? Date()
             title = title.replacingOccurrences(of: "(V2) ", with: "")
             var newItem = EraiRawsRSS(title: title, pubDate: time, subtitles: subtitles, category: category, episods: strParser.getERAndSPEpisods(title))

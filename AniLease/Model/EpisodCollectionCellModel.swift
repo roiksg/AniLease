@@ -8,6 +8,7 @@
 import Foundation
 
 struct Cell {
+    var id: Int
     var title: String
     var lastepisod: String
     var date: Date

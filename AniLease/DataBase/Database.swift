@@ -25,6 +25,7 @@ class DataBase {
             DispatchQueue.main.async {
                 let realm = try! Realm()
                 let anime = realm.objects(Anime.self)
+                var id: Int
                 self.LCItem = item
                 self.LCItem.forEach { curent in
                     let obj = anime.where {
@@ -50,25 +51,27 @@ class DataBase {
                         }
                     }
                     else {
-                        let episods = realm.objects(AnimeEpisods.self)
+                        let episods = obj!.episod
                         let strParser = StringParser()
                         var eps = episods.where {
-                            $0.episods == curent.episods
+                            $0.episods == strParser.strEpisodNumber(curent.episods)
                         }.first
                         if eps == nil {
                             eps = AnimeEpisods()
                             eps!.id = eps!.IncrementaID()
                         }
                         try! realm.write {
-                            eps!.episods = curent.episods
+                            eps!.episods = strParser.strEpisodNumber(curent.episods)
                             eps!.pubDate = curent.pubDate
                             realm.add(eps!)
                             obj!.titleName = curent.title
                             obj!.image = curent.imageURL
                             obj!.pubDate = curent.pubDate
                             obj!.link = curent.link
-                            let secondEPS = obj!.episod.last
-                            if secondEPS?.episods !=  strParser.strEpisodNumber(eps!.episods){
+                            let secondEPS = obj!.episod.where {
+                                $0.episods == eps!.episods
+                            }.first
+                            if secondEPS == nil{
                                 obj!.episod.append(eps!)
                             }
                             realm.add(eps!)
@@ -120,7 +123,7 @@ class DataBase {
                     }
                     
                     else {
-                        let episods = realm.objects(EraiRawsEpisods.self)
+                        let episods = obj!.episods
                         var newEp: Bool = false
                         var eps = episods.where {
                             $0.episods == curent.episods
@@ -181,7 +184,7 @@ class DataBase {
                     
                     else {
                         
-                        let episods = realm.objects(SubsPleaseEpisods.self)
+                        let episods = obj!.episods
                         var newEp = false
                         var eps = episods.where {
                             $0.episods == curent.episods
@@ -217,9 +220,15 @@ class DataBase {
         if curentAnime != nil {
             try! realm.write {
                 er.connect = true
-                curentAnime?.episod.last?.ERE = episod
+                let curEpisod = curentAnime?.episod.where {
+                    $0.episods == episod.episods
+                }.first
+                curEpisod?.ERE = episod
                 curentAnime?.ERName = er.titleName
                 realm.add(er)
+                if curEpisod != nil {
+                    realm.add(curEpisod!)
+                }
                 realm.add(curentAnime!)
             }
         }
@@ -234,9 +243,15 @@ class DataBase {
         if curentAnime != nil {
             try! realm.write {
                 sp.connect = true
-                curentAnime!.episod.last?.SPE = episod
+                let curEpisod = curentAnime?.episod.where {
+                    $0.episods == episod.episods
+                }.first
+                curEpisod?.SPE = episod
                 curentAnime!.SPName = sp.titleName
                 realm.add(sp)
+                if curEpisod != nil {
+                    realm.add(curEpisod!)
+                }
                 realm.add(curentAnime!)
             }
         }
@@ -286,5 +301,72 @@ class DataBase {
             info.append(Info(episod: episodInfo, eraiRaws: eraiRawsEpisodInfo, subsPlease: subsPleaseEpisodInfo))
         }
         return info
+    }
+    
+    func addConnection (animeID: Int, titleID: Int, type: String) {
+        let realm = try! Realm()
+        let anime = realm.objects(Anime.self)
+        let curentAnime = anime.where {
+            $0.id == animeID
+        }.first
+        if type == "EraiRaws"{
+            if curentAnime!.ERName != nil {
+                try! realm.write {
+                    let eraiRaws = realm.objects(EraiRaws.self).where {
+                        $0.titleName == (curentAnime?.ERName)!
+                    }.first
+                    let episod = curentAnime?.episod
+                    episod?.forEach {
+                        $0.ERE = nil
+                        realm.add($0)
+                    }
+                    eraiRaws!.connect = nil
+                    curentAnime!.ERName = eraiRaws!.titleName
+                    realm.add(eraiRaws!)
+                    realm.add(curentAnime!)
+                    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                }
+            }
+            let eraiRaws = realm.objects(EraiRaws.self)
+            let curentEraiRaws = eraiRaws.where {
+                $0.id == titleID
+            }.first
+            
+            try! realm.write {
+                curentAnime!.ERName = curentEraiRaws!.titleName
+                curentEraiRaws!.connect = true
+                realm.add(curentEraiRaws!)
+                realm.add(curentAnime!)
+            }
+        }
+        else {
+            if curentAnime!.SPName != nil {
+                try! realm.write {
+                    let subsPlease = realm.objects(SubsPlease.self).where {
+                        $0.titleName == (curentAnime?.SPName)!
+                    }.first
+                    let episod = curentAnime?.episod
+                    episod?.forEach {
+                        $0.SPE = nil
+                        realm.add($0)
+                    }
+                    subsPlease!.connect = nil
+                    curentAnime!.SPName = subsPlease!.titleName
+                    realm.add(subsPlease!)
+                    realm.add(curentAnime!)
+                }
+            }
+            let subsPlease = realm.objects(SubsPlease.self)
+            let curentSubsPlease = subsPlease.where {
+                $0.id == titleID
+            }.first
+            
+            try! realm.write {
+                curentAnime!.SPName = curentSubsPlease!.titleName
+                curentSubsPlease!.connect = true
+                realm.add(curentSubsPlease!)
+                realm.add(curentAnime!)
+            }
+        }
     }
 }
