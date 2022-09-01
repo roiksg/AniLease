@@ -224,7 +224,6 @@ class DataBase {
                 let curEpisod = curentAnime?.episod.where {
                     $0.episods == episod.episods
                 }.first
-                print("MYLOG: [\(curentAnime!.episod.last!.episods)] [\(episod.episods)]")
                 curEpisod?.ERE = episod
                 curentAnime?.ERName = er.titleName
                 realm.add(er)
@@ -367,5 +366,45 @@ class DataBase {
                 realm.add(curentAnime!)
             }
         }
+        refreshEpisods(animeID: animeID, titleID: titleID, type: type)
+    }
+    
+    func refreshEpisods (animeID: Int, titleID: Int, type: String) {
+        let realm = try! Realm()
+        let anime = realm.objects(Anime.self).where {
+            $0.id == animeID
+        }.first
+        let episods = anime?.episod
+        if type == "EraiRaws" {
+            let eraiRawsEpisods = realm.objects(EraiRaws.self).where {
+                $0.titleName == anime!.ERName ?? ""
+            }.first!.episods
+            episods?.forEach { episod in
+                eraiRawsEpisods.forEach { er in
+                    if episod.episods == er.episods {
+                        try! realm.write {
+                            episod.ERE = er
+                            realm.add(episod)
+                        }
+                    }
+                }
+            }
+        }
+        else {
+            let subsPleaseEpisods = realm.objects(SubsPlease.self).where {
+                $0.titleName == anime!.SPName ?? ""
+            }.first!.episods
+            episods?.forEach { episod in
+                subsPleaseEpisods.forEach { er in
+                    if episod.episods == er.episods {
+                        try! realm.write {
+                            episod.SPE = er
+                            realm.add(episod)
+                        }
+                    }
+                }
+            }
+        }
+        
     }
 }

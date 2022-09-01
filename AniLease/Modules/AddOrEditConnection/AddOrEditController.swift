@@ -76,6 +76,7 @@ extension AddOrEditController: UICollectionViewDataSource {
                 let yesAlertAction = UIAlertAction(title: "Yes", style: .default) { [unowned self] _ in
                     let dataBase = DataBase()
                     dataBase.addConnection(animeID: identifier, titleID: collectionCellModel[indexPath.row].id, type: type)
+                    self.collectionEpisod.reloadData()
                     self.presentingViewController?.dismiss(animated: true, completion: nil)
                 }
                 let noAlertAction = UIAlertAction(title: "No", style: .default)
