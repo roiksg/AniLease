@@ -12,6 +12,7 @@ class ReleaseInfoCollectionCell: UICollectionViewCell {
     @IBOutlet private weak var animeEpisod: UILabel!
     @IBOutlet private weak var animeDate: UILabel!
     @IBOutlet private weak var eraiRawsEpisod: UILabel!
+    @IBOutlet private weak var erColor: UIView!
     @IBOutlet private weak var eraiRawsDate: UILabel!
     @IBOutlet private weak var subsPleaseEpisod: UILabel!
     @IBOutlet private weak var subsPleaseDate: UILabel!
@@ -28,6 +29,7 @@ class ReleaseInfoCollectionCell: UICollectionViewCell {
     }
     
     func configureXib (_ info: Info) {
+        collectionFlag.backgroundColor = erColor.backgroundColor
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss"
         animeDate.text = dateFormatter.string(from: info.episod.pubdate)

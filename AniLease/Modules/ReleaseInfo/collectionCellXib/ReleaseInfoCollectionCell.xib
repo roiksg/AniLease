@@ -56,9 +56,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KWd-mO-XOk">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KWd-mO-XOk">
                                 <rect key="frame" x="6" y="95" width="467" height="31"/>
-                                <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.46467360610000003" green="0.46467360610000003" blue="0.46467360610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g4g-AI-TRg">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -192,6 +192,7 @@
                 <outlet property="animeDate" destination="VY1-hL-z3P" id="AI1-wO-UGt"/>
                 <outlet property="animeEpisod" destination="ody-cY-ww0" id="sEM-dT-6vD"/>
                 <outlet property="collectionFlag" destination="KWd-mO-XOk" id="eMi-kj-y8j"/>
+                <outlet property="erColor" destination="d4H-Ev-cpN" id="v4X-r5-IIY"/>
                 <outlet property="eraiRawsDate" destination="gW8-ML-8qd" id="l5V-jo-ul4"/>
                 <outlet property="eraiRawsEpisod" destination="6nf-bo-7O3" id="xSo-sG-d3K"/>
                 <outlet property="subsPleaseDate" destination="Tze-hQ-EXS" id="t8m-H7-hC7"/>
