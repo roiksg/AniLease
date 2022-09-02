@@ -12,10 +12,8 @@ class ReleaseInfoCollectionCell: UICollectionViewCell {
     @IBOutlet private weak var animeEpisod: UILabel!
     @IBOutlet private weak var animeDate: UILabel!
     @IBOutlet private weak var eraiRawsEpisod: UILabel!
-    @IBOutlet private weak var eraiRawsStatus: UILabel!
     @IBOutlet private weak var eraiRawsDate: UILabel!
     @IBOutlet private weak var subsPleaseEpisod: UILabel!
-    @IBOutlet private weak var subsPleaseStatus: UILabel!
     @IBOutlet private weak var subsPleaseDate: UILabel!
     @IBOutlet private weak var collectionFlag: UICollectionView!
     static let identifier = "EpisodsInfoCell"
@@ -35,7 +33,6 @@ class ReleaseInfoCollectionCell: UICollectionViewCell {
         animeDate.text = dateFormatter.string(from: info.episod.pubdate)
         animeEpisod.text = info.episod.episod
         eraiRawsEpisod.text = info.eraiRaws.Episod
-        eraiRawsStatus.text = info.eraiRaws.status
         if info.eraiRaws.pubDate == nil {
             eraiRawsDate.text = ""
         }
@@ -43,7 +40,6 @@ class ReleaseInfoCollectionCell: UICollectionViewCell {
             eraiRawsDate.text = dateFormatter.string(from: info.eraiRaws.pubDate!)
         }
         subsPleaseEpisod.text = info.subsPlease.episod
-        subsPleaseStatus.text = info.subsPlease.status
         if info.subsPlease.pubDate == nil {
             subsPleaseDate.text = ""
         }

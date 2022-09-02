@@ -23,6 +23,7 @@ class MainViewModel {
     }
     
     func loadItemCell(){
+        item = item.sorted { $0.pubDate > $1.pubDate }
         for item in self.item {
             let element = ReleaseMainModel(name: item.titleName, image: item.image, time: 0, Episod: item.episod.last?.episods ?? "EP NONE", ID: item.id)
             self.release.append(element)
