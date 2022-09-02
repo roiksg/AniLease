@@ -10,45 +10,55 @@ import SwiftUI
 
 struct SubFlag {
     var flag: String
-    var flagName: Image
+    var flagName: UIImage!
 }
 
 class Flag {
     
-    var flag: [SubFlag]!
+    private var allFlag: [SubFlag] = []
     init(){
-        flag.append(SubFlag(flag: "us", flagName: Image("english")))
-        flag.append(SubFlag(flag: "br", flagName: Image("brazil")))
-        flag.append(SubFlag(flag: "mx", flagName: Image("mexico")))
-        flag.append(SubFlag(flag: "es", flagName: Image("spanish")))
-        flag.append(SubFlag(flag: "sa", flagName: Image("arabic")))
-        flag.append(SubFlag(flag: "fr", flagName: Image("franch")))
-        flag.append(SubFlag(flag: "de", flagName: Image("german")))
-        flag.append(SubFlag(flag: "it", flagName: Image("italian")))
-        flag.append(SubFlag(flag: "ru", flagName: Image("russian")))
-        flag.append(SubFlag(flag: "jp", flagName: Image("japanese")))
-        flag.append(SubFlag(flag: "pt", flagName: Image("portuguese")))
-        flag.append(SubFlag(flag: "pl", flagName: Image("polish")))
-        flag.append(SubFlag(flag: "nl", flagName: Image("datch")))
-        flag.append(SubFlag(flag: "no", flagName: Image("norwegian")))
-        flag.append(SubFlag(flag: "fi", flagName: Image("finnish")))
-        flag.append(SubFlag(flag: "tr", flagName: Image("turkish")))
-        flag.append(SubFlag(flag: "se", flagName: Image("swedish")))
-        flag.append(SubFlag(flag: "gr", flagName: Image("greek")))
-        flag.append(SubFlag(flag: "il", flagName: Image("hebrew")))
-        flag.append(SubFlag(flag: "ro", flagName: Image("romanian")))
-        flag.append(SubFlag(flag: "id", flagName: Image("indonesian")))
-        flag.append(SubFlag(flag: "th", flagName: Image("thai")))
-        flag.append(SubFlag(flag: "kr", flagName: Image("korean")))
-        flag.append(SubFlag(flag: "dk", flagName: Image("danish")))
-        flag.append(SubFlag(flag: "cn", flagName: Image("chinese")))
-        flag.append(SubFlag(flag: "vn", flagName: Image("vietnamese")))
-        flag.append(SubFlag(flag: "ua", flagName: Image("ukrainian")))
-        flag.append(SubFlag(flag: "hu", flagName: Image("hungarian")))
-        flag.append(SubFlag(flag: "cz", flagName: Image("czech")))
-        flag.append(SubFlag(flag: "hr", flagName: Image("croatian")))
-        flag.append(SubFlag(flag: "my", flagName: Image("malaysian")))
-        flag.append(SubFlag(flag: "ph", flagName: Image("filipino")))
+        allFlag.append(SubFlag(flag: "us", flagName: UIImage(named: "english")))
+        allFlag.append(SubFlag(flag: "br", flagName: UIImage(named: "brazil")))
+        allFlag.append(SubFlag(flag: "mx", flagName: UIImage(named: "mexico")))
+        allFlag.append(SubFlag(flag: "es", flagName: UIImage(named: "spanish")))
+        allFlag.append(SubFlag(flag: "sa", flagName: UIImage(named: "arabic")))
+        allFlag.append(SubFlag(flag: "fr", flagName: UIImage(named: "franch")))
+        allFlag.append(SubFlag(flag: "de", flagName: UIImage(named: "german")))
+        allFlag.append(SubFlag(flag: "it", flagName: UIImage(named: "italian")))
+        allFlag.append(SubFlag(flag: "ru", flagName: UIImage(named: "russian")))
+        allFlag.append(SubFlag(flag: "jp", flagName: UIImage(named: "japanese")))
+        allFlag.append(SubFlag(flag: "pt", flagName: UIImage(named: "portuguese")))
+        allFlag.append(SubFlag(flag: "pl", flagName: UIImage(named: "polish")))
+        allFlag.append(SubFlag(flag: "nl", flagName: UIImage(named: "datch")))
+        allFlag.append(SubFlag(flag: "no", flagName: UIImage(named: "norwegian")))
+        allFlag.append(SubFlag(flag: "fi", flagName: UIImage(named: "finnish")))
+        allFlag.append(SubFlag(flag: "tr", flagName: UIImage(named: "turkish")))
+        allFlag.append(SubFlag(flag: "se", flagName: UIImage(named: "swedish")))
+        allFlag.append(SubFlag(flag: "gr", flagName: UIImage(named: "greek")))
+        allFlag.append(SubFlag(flag: "il", flagName: UIImage(named: "hebrew")))
+        allFlag.append(SubFlag(flag: "ro", flagName: UIImage(named: "romanian")))
+        allFlag.append(SubFlag(flag: "id", flagName: UIImage(named: "indonesian")))
+        allFlag.append(SubFlag(flag: "th", flagName: UIImage(named: "thai")))
+        allFlag.append(SubFlag(flag: "kr", flagName: UIImage(named: "korean")))
+        allFlag.append(SubFlag(flag: "dk", flagName: UIImage(named: "danish")))
+        allFlag.append(SubFlag(flag: "cn", flagName: UIImage(named: "chinese")))
+        allFlag.append(SubFlag(flag: "vn", flagName: UIImage(named: "vietnamese")))
+        allFlag.append(SubFlag(flag: "ua", flagName: UIImage(named: "ukrainian")))
+        allFlag.append(SubFlag(flag: "hu", flagName: UIImage(named: "hungarian")))
+        allFlag.append(SubFlag(flag: "cz", flagName: UIImage(named: "czech")))
+        allFlag.append(SubFlag(flag: "hr", flagName: UIImage(named: "croatian")))
+        allFlag.append(SubFlag(flag: "my", flagName: UIImage(named: "malaysian")))
+        allFlag.append(SubFlag(flag: "ph", flagName: UIImage(named: "filipino")))
+    }
+    
+    func getFlagElement(text: String) -> [SubFlag] {
+        var flag: [SubFlag] = []
+        allFlag.forEach {
+            if text.contains($0.flag) {
+                flag.append($0)
+            }
+        }
+        return flag
     }
     
 }

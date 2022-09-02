@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -59,8 +58,8 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KWd-mO-XOk">
                                 <rect key="frame" x="6" y="95" width="467" height="31"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g4g-AI-TRg">
+                                <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g4g-AI-TRg">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -208,6 +207,7 @@
             <connections>
                 <outlet property="animeDate" destination="VY1-hL-z3P" id="AI1-wO-UGt"/>
                 <outlet property="animeEpisod" destination="ody-cY-ww0" id="sEM-dT-6vD"/>
+                <outlet property="collectionFlag" destination="KWd-mO-XOk" id="eMi-kj-y8j"/>
                 <outlet property="eraiRawsDate" destination="gW8-ML-8qd" id="l5V-jo-ul4"/>
                 <outlet property="eraiRawsEpisod" destination="6nf-bo-7O3" id="xSo-sG-d3K"/>
                 <outlet property="eraiRawsStatus" destination="f8U-ao-xQp" id="JgZ-Xk-rFo"/>
@@ -218,9 +218,4 @@
             <point key="canvasLocation" x="97.826086956521749" y="145.98214285714286"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

@@ -15,6 +15,8 @@
 		531697BB28BE081E00FB1B4F /* EpisodCollectionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531697BA28BE081E00FB1B4F /* EpisodCollectionCellModel.swift */; };
 		531697BD28BE237000FB1B4F /* ReleaseMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531697BC28BE237000FB1B4F /* ReleaseMainModel.swift */; };
 		531DAADA28B8B12F0052FED1 /* ReleaseInfoCellModell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531DAAD928B8B12F0052FED1 /* ReleaseInfoCellModell.swift */; };
+		531F202428C1DCED0069FEB6 /* FlagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531F202228C1DCED0069FEB6 /* FlagCollectionViewCell.swift */; };
+		531F202528C1DCED0069FEB6 /* FlagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531F202328C1DCED0069FEB6 /* FlagCollectionViewCell.xib */; };
 		5349E30728B36EAF00D14A99 /* XMLstructModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349E30628B36EAF00D14A99 /* XMLstructModel.swift */; };
 		5349E30928B3786300D14A99 /* liveChartParserXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349E30828B3786300D14A99 /* liveChartParserXML.swift */; };
 		535DD6A728B4C55700A8D1D2 /* EraiRawsParserXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535DD6A628B4C55700A8D1D2 /* EraiRawsParserXML.swift */; };
@@ -51,6 +53,8 @@
 		531697BA28BE081E00FB1B4F /* EpisodCollectionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodCollectionCellModel.swift; sourceTree = "<group>"; };
 		531697BC28BE237000FB1B4F /* ReleaseMainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseMainModel.swift; sourceTree = "<group>"; };
 		531DAAD928B8B12F0052FED1 /* ReleaseInfoCellModell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseInfoCellModell.swift; sourceTree = "<group>"; };
+		531F202228C1DCED0069FEB6 /* FlagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagCollectionViewCell.swift; sourceTree = "<group>"; };
+		531F202328C1DCED0069FEB6 /* FlagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlagCollectionViewCell.xib; sourceTree = "<group>"; };
 		5349E30628B36EAF00D14A99 /* XMLstructModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLstructModel.swift; sourceTree = "<group>"; };
 		5349E30828B3786300D14A99 /* liveChartParserXML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = liveChartParserXML.swift; sourceTree = "<group>"; };
 		5349E30A28B3A74700D14A99 /* release.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = release.xml; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 			children = (
 				5366D9B128B638D70013DBB6 /* ReleaseInfoCollectionCell.swift */,
 				5366D9B228B638D70013DBB6 /* ReleaseInfoCollectionCell.xib */,
+				531F202228C1DCED0069FEB6 /* FlagCollectionViewCell.swift */,
+				531F202328C1DCED0069FEB6 /* FlagCollectionViewCell.xib */,
 			);
 			path = collectionCellXib;
 			sourceTree = "<group>";
@@ -326,6 +332,7 @@
 				5366D9B428B638D70013DBB6 /* ReleaseInfoCollectionCell.xib in Resources */,
 				53E8B7C428ACEDE900DDEFB3 /* Assets.xcassets in Resources */,
 				53E8B7C228ACEDE600DDEFB3 /* Main.storyboard in Resources */,
+				531F202528C1DCED0069FEB6 /* FlagCollectionViewCell.xib in Resources */,
 				536B2A3D28AE19260093B42C /* MainCollectionViewCell.xib in Resources */,
 				531697AE28BDF99300FB1B4F /* AddOrEditConnection.storyboard in Resources */,
 				537C94D228AF726B0019A9A6 /* ReleaseInfo.storyboard in Resources */,
@@ -386,6 +393,7 @@
 				535DD6AA28B4CB7700A8D1D2 /* StringParser.swift in Sources */,
 				531697B628BE035D00FB1B4F /* AddOrEditController.swift in Sources */,
 				5366D9AB28B621BA0013DBB6 /* Database.swift in Sources */,
+				531F202428C1DCED0069FEB6 /* FlagCollectionViewCell.swift in Sources */,
 				531DAADA28B8B12F0052FED1 /* ReleaseInfoCellModell.swift in Sources */,
 				5349E30728B36EAF00D14A99 /* XMLstructModel.swift in Sources */,
 				53EB628E28C0BDFF0009626B /* SubsPleaseParserXML.swift in Sources */,
