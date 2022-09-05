@@ -113,6 +113,7 @@
                     <connections>
                         <outlet property="collectionEpisod" destination="Oh0-gc-ypz" id="hoK-XD-XuJ"/>
                         <outlet property="eraiRawsView" destination="WwD-Ij-rXG" id="Ect-z6-P4a"/>
+                        <outlet property="searchTextField" destination="bjk-hr-s75" id="7rg-Nc-cr0"/>
                         <outlet property="subsPleaseView" destination="SRm-i6-Ra8" id="N2v-Zp-bGx"/>
                     </connections>
                 </viewController>

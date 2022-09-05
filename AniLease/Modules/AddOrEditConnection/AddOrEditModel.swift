@@ -22,29 +22,53 @@ class AddOrEditModel {
         loadModel()
     }
     
-    func loadModel() {
-        EREpisodModel()
-        SPEpisodModel()
+    func loadModel(_ search: String = "") {
+        eraiRawsCell = []
+        subsPleaseCell = []
+        EREpisodModel(search)
+        SPEpisodModel(search)
         controller.modelUpdate(er: eraiRawsCell, sp: subsPleaseCell)
     }
     
-    func EREpisodModel() {
+    func EREpisodModel(_ search: String) {
+        
         let ER = realm.objects(EraiRaws.self)
+        
+        var name = search
+        name = name.lowercased()
+        
         let eraiRaws = ER.where {
             $0.connect != true
         }
+        
         eraiRaws.forEach {
-            eraiRawsCell.append(Cell(id: $0.id, title: $0.titleName, lastepisod: $0.episods.last!.episods, date: $0.episods.last!.pubDate))
+            if name == ""{
+                eraiRawsCell.append(Cell(id: $0.id, title: $0.titleName, lastepisod: $0.episods.last!.episods, date: $0.episods.last!.pubDate))
+            }
+            else if $0.titleName.lowercased().contains(name) {
+                eraiRawsCell.append(Cell(id: $0.id, title: $0.titleName, lastepisod: $0.episods.last!.episods, date: $0.episods.last!.pubDate))
+            }
         }
     }
     
-    func SPEpisodModel() {
+    func SPEpisodModel(_ search: String) {
+        
         let SP = realm.objects(SubsPlease.self)
+        
+        var name = search
+        name = name.lowercased()
+        
         let subsPlease = SP.where {
             $0.connect != true
         }
+        
         subsPlease.forEach {
-            subsPleaseCell.append(Cell(id: $0.id, title: $0.titleName, lastepisod: $0.episods.last!.episods, date: $0.episods.last!.pubDate))
+            if name == ""{
+                subsPleaseCell.append(Cell(id: $0.id, title: $0.titleName, lastepisod: $0.episods.last!.episods, date: $0.episods.last!.pubDate))
+            }
+            else if $0.titleName.lowercased().contains(name) {
+                subsPleaseCell.append(Cell(id: $0.id, title: $0.titleName, lastepisod: $0.episods.last!.episods, date: $0.episods.last!.pubDate))
+            }
         }
     }
     
@@ -60,4 +84,5 @@ class AddOrEditModel {
             return curentAnume!.SPName ?? ""
         }
     }
+    
 }

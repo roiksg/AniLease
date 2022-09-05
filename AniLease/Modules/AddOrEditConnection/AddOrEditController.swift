@@ -12,6 +12,7 @@ class AddOrEditController: UIViewController {
     @IBOutlet private weak var collectionEpisod: UICollectionView!
     @IBOutlet private weak var eraiRawsView: UIView!
     @IBOutlet private weak var subsPleaseView: UIView!
+    @IBOutlet private weak var searchTextField: UITextField!
     private var viewModel: AddOrEditModel!
     private var eraiRawsCell: [Cell] = []
     private var subsPleaseCell: [Cell] = []
@@ -23,6 +24,8 @@ class AddOrEditController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = AddOrEditModel(self)
+        searchTextField.delegate = self
+        searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:) ), for: .allEditingEvents)
         self.collectionEpisod.dataSource = self
         self.collectionEpisod.delegate = self
         self.collectionEpisod.register(.init(nibName: "EpisodCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: EpisodCollectionViewCell.identifier)
@@ -47,6 +50,29 @@ class AddOrEditController: UIViewController {
             $0.date > $1.date
         }
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func reloadCollection() {
+        if type == "EraiRaws" {
+            collectionCellModel = eraiRawsCell
+        }
+        else {
+            collectionCellModel = subsPleaseCell
+        }
+        collectionEpisod.reloadData()
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        let search = searchTextField.text ?? ""
+        viewModel.loadModel(search)
+        reloadCollection()
+    }
+    
+    
     
     @IBAction func eraiRawsTap(_ sender: Any) {
         collectionCellModel = eraiRawsCell
@@ -117,5 +143,15 @@ extension AddOrEditController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 5
+    }
+}
+
+extension AddOrEditController: UITextFieldDelegate {
+    // hidde keyboard for tap
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if touches.first != nil {
+            view.endEditing(true)
+        }
+        super.touchesBegan(touches, with: event)
     }
 }
