@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import Toast_Swift
 
 class ReleaseInfoController: UIViewController, UICollectionViewDelegate {
 
@@ -72,20 +73,24 @@ class ReleaseInfoController: UIViewController, UICollectionViewDelegate {
         if anime.favorite == false {
             viewModel.changeAnime(anime, true, anime.hidden)
             changeImage()
+            self.view.makeToast("add this anime to favorite")
         }
         else {
             viewModel.changeAnime(anime, false, anime.hidden)
             changeImage()
+            self.view.makeToast("remove this anime to favorite")
         }
     }
     @IBAction func tapHidden(_ sender: Any) {
         if anime.hidden == false {
             viewModel.changeAnime(anime, anime.favorite, true)
             changeImage()
+            self.view.makeToast("hide this anime")
         }
         else {
             viewModel.changeAnime(anime, anime.favorite, false)
             changeImage()
+            self.view.makeToast("show this anime")
         }
     }
 }

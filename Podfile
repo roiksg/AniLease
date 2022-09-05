@@ -9,4 +9,5 @@ target 'AniLease' do
   pod 'Kingfisher', '~> 7.0'
   pod 'RealmSwift', '10.28.5'
   pod 'SwiftLint', '0.48.0'
+  pod 'Toast-Swift', '~> 5.0.1'
 end

@@ -42,7 +42,7 @@
                                                             </connections>
                                                         </barButtonItem>
                                                         <rightBarButtonItems>
-                                                            <barButtonItem style="plain" id="ZzM-hW-6Tb">
+                                                            <barButtonItem id="ZzM-hW-6Tb">
                                                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="gxq-kk-9hK">
                                                                     <rect key="frame" x="302" y="5" width="92" height="34.5"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -55,7 +55,7 @@
                                                                     </connections>
                                                                 </button>
                                                             </barButtonItem>
-                                                            <barButtonItem style="plain" id="Yoj-Ls-AOH">
+                                                            <barButtonItem id="Yoj-Ls-AOH">
                                                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="5X6-xC-1Qd">
                                                                     <rect key="frame" x="202" y="5" width="92" height="34.5"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -204,6 +204,8 @@
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="eye" catalog="system" width="128" height="81"/>
+        <image name="eye" width="128" height="128"/>
+        <image name="star" width="128" height="128"/>
         <image name="star" catalog="system" width="128" height="116"/>
     </resources>
 </document>

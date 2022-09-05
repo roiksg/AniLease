@@ -6,11 +6,13 @@ PODS:
   - RealmSwift (10.28.5):
     - Realm (= 10.28.5)
   - SwiftLint (0.48.0)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Kingfisher (~> 7.0)
   - RealmSwift (= 10.28.5)
   - SwiftLint (= 0.48.0)
+  - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
   trunk:
@@ -18,13 +20,15 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SwiftLint
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
   Realm: eb7f6a7a8395906822e6fab71eb8496d6d52b318
   RealmSwift: 6b54904d4a236de143f3411a757641fd74e9cb3d
   SwiftLint: 284cea64b6187c5d6bd83e9a548a64104d546447
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: ad944018284c0e1194de431e0ae3189a7f95f8c1
+PODFILE CHECKSUM: 6dd70bead33daa0c721a15405ec2ef05feb99c60
 
 COCOAPODS: 1.11.3
