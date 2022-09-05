@@ -215,9 +215,12 @@ class DataBase {
     func connectERToAnime (_ er: EraiRaws, _ episod: EraiRawsEpisods) {
         let realm = try! Realm()
         let anime = realm.objects(Anime.self)
-        let curentAnime = anime.where {
-            $0.titleName == er.titleName || $0.ERName == er.titleName
-        }.first
+        var curentAnime: Anime?
+        anime.forEach {
+            if $0.titleName.lowercased() == er.titleName.lowercased() || $0.ERName == er.titleName{
+                curentAnime = $0
+            }
+        }
         if curentAnime != nil {
             try! realm.write {
                 er.connect = true
@@ -238,9 +241,12 @@ class DataBase {
     func connectSPToAnime (_ sp: SubsPlease, _ episod: SubsPleaseEpisods) {
         let realm = try! Realm()
         let anime = realm.objects(Anime.self)
-        let curentAnime = anime.where {
-            $0.titleName == sp.titleName || $0.SPName == sp.titleName
-        }.first
+        var curentAnime: Anime?
+        anime.forEach {
+            if $0.titleName.lowercased() == sp.titleName.lowercased() || $0.ERName == sp.titleName{
+                curentAnime = $0
+            }
+        }
         if curentAnime != nil {
             try! realm.write {
                 sp.connect = true
