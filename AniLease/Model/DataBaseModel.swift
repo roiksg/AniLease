@@ -13,10 +13,10 @@ class Anime: Object {
     @Persisted(primaryKey: true) var id: Int
     @Persisted var titleName: String
     @Persisted var link: String
-    @Persisted var episodsCount: Int?
+    @Persisted var favorite: Bool = false
+    @Persisted var hidden: Bool = false
     @Persisted var pubDate: Date
     @Persisted var image: String
-    @Persisted var refreshTime: Int?
     @Persisted var category: String?
     @Persisted var ERName: String?
     @Persisted var SPName: String?

@@ -15,7 +15,11 @@ class ReleaseInfoController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var category: UILabel!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var favorite: UIButton!
+    @IBOutlet weak var hidden: UIButton!
     private var viewModel: ReleaseInfoModel!
+    private var anime: Anime!
+    
     
     var identifier: Int!
 
@@ -25,9 +29,11 @@ class ReleaseInfoController: UIViewController, UICollectionViewDelegate {
         self.episodCollection.dataSource = self
         self.episodCollection.delegate = self
         self.episodCollection.register(.init(nibName: "ReleaseInfoCollectionCell", bundle: nil), forCellWithReuseIdentifier: ReleaseInfoCollectionCell.identifier)
+        anime = viewModel.getThisAnime()
+        changeImage()
         // Do any additional setup after loading the view.
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         episodCollection.reloadData()
     }
@@ -40,12 +46,47 @@ class ReleaseInfoController: UIViewController, UICollectionViewDelegate {
         }
     }
     
+    func changeImage() {
+        if anime.favorite == true {
+            favorite.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }
+        else {
+            favorite.setImage(UIImage(systemName: "star"), for: .normal)
+        }
+        if anime.hidden == true {
+            hidden.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        }
+        else {
+            hidden.setImage(UIImage(systemName: "eye"), for: .normal)
+        }
+    }
+    
     @IBAction func showAddOrEdit(_ sender: Any) {
         self.performSegue(withIdentifier: "AddOrEditSegue", sender: self)
     }
     
     @IBAction func unwindReleaseInfo(_ unwindSegue: UIStoryboardSegue) {
         
+    }
+    @IBAction func tapFavorite(_ sender: Any) {
+        if anime.favorite == false {
+            viewModel.changeAnime(anime, true, anime.hidden)
+            changeImage()
+        }
+        else {
+            viewModel.changeAnime(anime, false, anime.hidden)
+            changeImage()
+        }
+    }
+    @IBAction func tapHidden(_ sender: Any) {
+        if anime.hidden == false {
+            viewModel.changeAnime(anime, anime.favorite, true)
+            changeImage()
+        }
+        else {
+            viewModel.changeAnime(anime, anime.favorite, false)
+            changeImage()
+        }
     }
 }
 

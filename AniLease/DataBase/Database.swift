@@ -398,7 +398,7 @@ class DataBase {
         }
         else {
             let subsPleaseEpisods = realm.objects(SubsPlease.self).where {
-                $0.titleName == anime!.SPName ?? ""
+                $0.titleName == anime?.SPName ?? ""
             }.first!.episods
             episods?.forEach { episod in
                 subsPleaseEpisods.forEach { er in

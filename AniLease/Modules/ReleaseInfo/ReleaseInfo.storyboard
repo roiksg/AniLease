@@ -42,11 +42,31 @@
                                                             </connections>
                                                         </barButtonItem>
                                                         <rightBarButtonItems>
-                                                            <barButtonItem image="gearshape" catalog="system" id="q1C-6A-KrT">
-                                                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <barButtonItem style="plain" id="ZzM-hW-6Tb">
+                                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="gxq-kk-9hK">
+                                                                    <rect key="frame" x="302" y="5" width="92" height="34.5"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system">
+                                                                        <color key="baseForegroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </buttonConfiguration>
+                                                                    <connections>
+                                                                        <action selector="tapHidden:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Flp-MD-Niy"/>
+                                                                    </connections>
+                                                                </button>
                                                             </barButtonItem>
-                                                            <barButtonItem image="star" catalog="system" id="l9B-oc-Jws">
-                                                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <barButtonItem style="plain" id="Yoj-Ls-AOH">
+                                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="5X6-xC-1Qd">
+                                                                    <rect key="frame" x="202" y="5" width="92" height="34.5"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <buttonConfiguration key="configuration" style="plain" image="star" catalog="system">
+                                                                        <color key="baseForegroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </buttonConfiguration>
+                                                                    <connections>
+                                                                        <action selector="tapFavorite:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BeI-gF-haO"/>
+                                                                    </connections>
+                                                                </button>
                                                             </barButtonItem>
                                                         </rightBarButtonItems>
                                                     </navigationItem>
@@ -154,6 +174,8 @@
                     <connections>
                         <outlet property="category" destination="y7P-O2-gJr" id="C6h-U9-gUq"/>
                         <outlet property="episodCollection" destination="sMK-fE-BPY" id="EiM-7S-MrY"/>
+                        <outlet property="favorite" destination="5X6-xC-1Qd" id="rvV-FC-MkR"/>
+                        <outlet property="hidden" destination="gxq-kk-9hK" id="14k-hw-23F"/>
                         <outlet property="image" destination="WYT-Ib-oCT" id="9sd-vD-mof"/>
                         <outlet property="lastEpisod" destination="tmW-aB-kv1" id="jZn-Ll-Rs0"/>
                         <outlet property="name" destination="S4r-xD-Yae" id="PQK-FA-ecc"/>
@@ -181,7 +203,7 @@
     </scenes>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
-        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="eye" catalog="system" width="128" height="81"/>
         <image name="star" catalog="system" width="128" height="116"/>
     </resources>
 </document>

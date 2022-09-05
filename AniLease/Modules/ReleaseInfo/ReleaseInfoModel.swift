@@ -38,11 +38,23 @@ class ReleaseInfoModel {
         info  = dataBase.getInfoModel(id)
     }
     
+    func getThisAnime() -> Anime {
+        return realm.objects(Anime.self).where {$0.id == id}.first!
+    }
+    
     func releaseCount() -> Int{
         animeEpisods.count
     }
 
     func returnCellModel() -> [Info] {
         info
+    }
+    
+    func changeAnime(_ anime: Anime, _ fv: Bool, _ hd: Bool) {
+        try! realm.write {
+            anime.favorite = fv
+            anime.hidden = hd
+            realm.add(anime)
+        }
     }
 }
