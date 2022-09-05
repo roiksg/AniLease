@@ -9,11 +9,10 @@ import UIKit
 
 class AddOrEditController: UIViewController {
     
-    @IBOutlet weak var collectionEpisod: UICollectionView!
-    @IBOutlet weak var eraiRawsView: UIView!
-    @IBOutlet weak var subsPleaseView: UIView!
+    @IBOutlet private weak var collectionEpisod: UICollectionView!
+    @IBOutlet private weak var eraiRawsView: UIView!
+    @IBOutlet private weak var subsPleaseView: UIView!
     private var viewModel: AddOrEditModel!
-    private var dataBase: DataBase!
     private var eraiRawsCell: [Cell] = []
     private var subsPleaseCell: [Cell] = []
     private var collectionCellModel: [Cell] = []
@@ -24,12 +23,12 @@ class AddOrEditController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = AddOrEditModel(self)
-        dataBase = DataBase()
         self.collectionEpisod.dataSource = self
         self.collectionEpisod.delegate = self
         self.collectionEpisod.register(.init(nibName: "EpisodCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: EpisodCollectionViewCell.identifier)
         type = "EraiRaws"
         collectionCellModel = eraiRawsCell
+        sortCollection()
         // Do any additional setup after loading the view.
     }
     
@@ -42,8 +41,16 @@ class AddOrEditController: UIViewController {
         eraiRawsCell = er
         subsPleaseCell = sp
     }
+    
+    func sortCollection() {
+        collectionCellModel = collectionCellModel.sorted {
+            $0.date > $1.date
+        }
+    }
+    
     @IBAction func eraiRawsTap(_ sender: Any) {
         collectionCellModel = eraiRawsCell
+        sortCollection()
         type = "EraiRaws"
         eraiRawsView.backgroundColor = .darkGray
         subsPleaseView.backgroundColor = .lightGray
@@ -51,6 +58,7 @@ class AddOrEditController: UIViewController {
     }
     @IBAction func subsPleaseTap(_ sender: Any) {
         collectionCellModel = subsPleaseCell
+        sortCollection()
         type = "SubsPlease"
         eraiRawsView.backgroundColor = .lightGray
         subsPleaseView.backgroundColor = .darkGray
