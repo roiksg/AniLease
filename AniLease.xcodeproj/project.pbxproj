@@ -57,7 +57,6 @@
 		531F202328C1DCED0069FEB6 /* FlagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlagCollectionViewCell.xib; sourceTree = "<group>"; };
 		5349E30628B36EAF00D14A99 /* XMLstructModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLstructModel.swift; sourceTree = "<group>"; };
 		5349E30828B3786300D14A99 /* liveChartParserXML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = liveChartParserXML.swift; sourceTree = "<group>"; };
-		5349E30A28B3A74700D14A99 /* release.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = release.xml; sourceTree = "<group>"; };
 		535DD6A628B4C55700A8D1D2 /* EraiRawsParserXML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EraiRawsParserXML.swift; sourceTree = "<group>"; };
 		535DD6A928B4CB7700A8D1D2 /* StringParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringParser.swift; sourceTree = "<group>"; };
 		5366D9A828B6069F0013DBB6 /* DataBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseModel.swift; sourceTree = "<group>"; };
@@ -214,7 +213,6 @@
 				53E8B7CE28AD06B900DDEFB3 /* Modules */,
 				53E8B7C328ACEDE900DDEFB3 /* Assets.xcassets */,
 				53E8B7C828ACEDE900DDEFB3 /* Info.plist */,
-				5349E30A28B3A74700D14A99 /* release.xml */,
 			);
 			path = AniLease;
 			sourceTree = "<group>";
