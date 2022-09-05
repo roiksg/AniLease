@@ -28,6 +28,10 @@ class ReleaseInfoController: UIViewController, UICollectionViewDelegate {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        episodCollection.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is AddOrEditController {
             if let vc = segue.destination as? AddOrEditController {
