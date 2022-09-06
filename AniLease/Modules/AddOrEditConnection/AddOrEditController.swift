@@ -26,6 +26,7 @@ class AddOrEditController: UIViewController {
         viewModel = AddOrEditModel(self)
         searchTextField.delegate = self
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:) ), for: .allEditingEvents)
+        searchTextField.autocorrectionType = .no
         self.collectionEpisod.dataSource = self
         self.collectionEpisod.delegate = self
         self.collectionEpisod.register(.init(nibName: "EpisodCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: EpisodCollectionViewCell.identifier)

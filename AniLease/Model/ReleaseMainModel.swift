@@ -13,4 +13,8 @@ struct ReleaseMainModel {
     let time: Int
     let Episod: String
     let ID: Int
+    let favorite: Bool
+    let hidden: Bool
+    let lastER: String
+    let lastSP: String
 }

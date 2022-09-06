@@ -204,8 +204,6 @@
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="eye" catalog="system" width="128" height="81"/>
-        <image name="eye" width="128" height="128"/>
-        <image name="star" width="128" height="128"/>
         <image name="star" catalog="system" width="128" height="116"/>
     </resources>
 </document>

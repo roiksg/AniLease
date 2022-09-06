@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sb5-AV-X7K">
-                                <rect key="frame" x="0.0" y="44" width="414" height="720"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="676"/>
                                 <color key="backgroundColor" red="0.40802835680774807" green="0.40802835680774807" blue="0.40802835680774807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xZS-qr-FUl">
                                     <size key="itemSize" width="128" height="128"/>
@@ -30,21 +30,61 @@
                                 <rect key="frame" x="0.0" y="764" width="414" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <barButtonItem title="All" image="scroll" catalog="system" width="242.5" id="2Pc-Kq-xO3"/>
-                                    <barButtonItem title="favorite" image="star.fill" catalog="system" width="94" id="RYQ-HD-ZRV"/>
+                                    <barButtonItem title="All" image="scroll" catalog="system" width="242.5" id="2Pc-Kq-xO3">
+                                        <connections>
+                                            <action selector="tapAll:" destination="BYZ-38-t0r" id="bNd-ay-juf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="favorite" image="star.fill" catalog="system" width="94" id="RYQ-HD-ZRV">
+                                        <connections>
+                                            <action selector="tapFavorite:" destination="BYZ-38-t0r" id="Vse-1a-Xcx"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </toolbar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1pw-lk-UNP">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem id="sk4-0G-jtS">
+                                        <nil key="title"/>
+                                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="center" minimumFontSize="17" id="Cwq-e1-sKt">
+                                            <rect key="frame" x="124.5" y="5" width="165" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <barButtonItem key="rightBarButtonItem" id="Hlt-an-JC4">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="7hr-ON-BHa">
+                                                <rect key="frame" x="302" y="5" width="92" height="34.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="eye.slash" catalog="system">
+                                                    <color key="baseForegroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="tapHidden:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1W4-aR-Bia"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1pw-lk-UNP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0QI-5h-xlA"/>
                             <constraint firstItem="T3D-TP-ERE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5VB-cy-pcF"/>
-                            <constraint firstItem="sb5-AV-X7K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IYE-t4-zUr"/>
                             <constraint firstItem="T3D-TP-ERE" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Mwz-0r-0FW"/>
                             <constraint firstItem="T3D-TP-ERE" firstAttribute="top" secondItem="sb5-AV-X7K" secondAttribute="bottom" id="Phe-hL-9Y2"/>
+                            <constraint firstItem="sb5-AV-X7K" firstAttribute="top" secondItem="1pw-lk-UNP" secondAttribute="bottom" id="Sod-Rp-Nw2"/>
                             <constraint firstItem="T3D-TP-ERE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W0U-Zk-XxL"/>
+                            <constraint firstItem="1pw-lk-UNP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hV8-T5-Iqf"/>
+                            <constraint firstItem="1pw-lk-UNP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iOF-4D-6Sl"/>
                             <constraint firstItem="sb5-AV-X7K" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mMg-nZ-ABY"/>
                             <constraint firstItem="sb5-AV-X7K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ujb-Qx-oYA"/>
                         </constraints>
@@ -53,6 +93,8 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionRelease" destination="sb5-AV-X7K" id="b4s-y2-fSw"/>
+                        <outlet property="hiddenButton" destination="7hr-ON-BHa" id="C0D-lh-k6p"/>
+                        <outlet property="searchTextField" destination="Cwq-e1-sKt" id="0te-At-2Df"/>
                         <segue destination="eEt-Fd-SU5" kind="presentation" identifier="ReleaseInfoVCsegue" id="ill-G8-6mJ"/>
                     </connections>
                 </viewController>
@@ -70,6 +112,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="eye.slash" catalog="system" width="128" height="86"/>
         <image name="scroll" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>

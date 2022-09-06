@@ -51,6 +51,7 @@ class ReleaseInfoCollectionCell: UICollectionViewCell {
         
         let flag = Flag()
         subtitles = flag.getFlagElement(text: info.eraiRaws.subtitles)
+        collectionFlag.reloadData()
     }
 
 }

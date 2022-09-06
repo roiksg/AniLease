@@ -36,6 +36,8 @@ class ReleaseInfoController: UIViewController, UICollectionViewDelegate {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        viewModel.loadDate()
+        anime = viewModel.getThisAnime()
         episodCollection.reloadData()
     }
     
