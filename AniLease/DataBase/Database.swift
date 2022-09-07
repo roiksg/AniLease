@@ -125,7 +125,7 @@ class DataBase {
                         let episods = obj!.episods
                         var newEp: Bool = false
                         var eps = episods.where {
-                            $0.episods == curent.episods
+                            $0.episods == strParser.strEpisodNumber(curent.episods)
                         }.first
                         if eps == nil {
                             eps = EraiRawsEpisods()
@@ -187,7 +187,7 @@ class DataBase {
                         let episods = obj!.episods
                         var newEp = false
                         var eps = episods.where {
-                            $0.episods == curent.episods
+                            $0.episods == strParser.strEpisodNumber(curent.episods)
                         }.first
                         
                         if eps == nil {
