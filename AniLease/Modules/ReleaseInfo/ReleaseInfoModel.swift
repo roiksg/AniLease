@@ -35,6 +35,7 @@ class ReleaseInfoModel {
         controller.name.text = curentAnime.titleName
         controller.category.text = curentAnime.category
         controller.lastEpisod.text = curentAnime.episod.last?.episods
+        controller.category.text = curentAnime.category
         info  = dataBase.getInfoModel(id)
     }
     
