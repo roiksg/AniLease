@@ -30,7 +30,11 @@ class EraiRawsParserXML: NSObject, XMLParserDelegate {
             }
             
             if let httpResponse = response as? HTTPURLResponse{
-                print("MYLOG \(httpResponse.statusCode)")
+                DispatchQueue.main.async {
+                    let status = Status.shared
+                    status.description = "EraiRawsRSS parsing"
+                    status.status = httpResponse.statusCode
+                }
             }
             
             if let data = data {

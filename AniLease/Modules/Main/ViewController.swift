@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     
     private var viewModel: MainViewModel!
     
+    private var status: Status!
+    
     private var cellIdentifiers: Int!
     
     private var hidden: Bool!
@@ -27,6 +29,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let status = Status.shared
+        status.setVC(self)
         hidden = false
         favorite = false
         self.viewModel = MainViewModel(self)
@@ -60,6 +64,14 @@ class ViewController: UIViewController {
                 vc.identifier = cellIdentifiers
             }
         }
+    }
+    
+    func changeStstus(_ status: Int, _ description: String ) {
+        let alert: UIAlertController
+        alert = .init(title: "Error", message: "network status \(status)\n\(description)", preferredStyle: .alert)
+        let yesAlertAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(yesAlertAction)
+        self.present(alert, animated: true)
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {

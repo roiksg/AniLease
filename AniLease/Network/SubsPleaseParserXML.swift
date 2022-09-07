@@ -26,6 +26,15 @@ class SubsPleaseParserXML: NSObject, XMLParserDelegate {
             if let error = error {
                 print(error.localizedDescription)
             }
+            
+            if let httpResponse = response as? HTTPURLResponse{
+                DispatchQueue.main.async {
+                    let status = Status.shared
+                    status.description = "SubsPleaseRSS parsing"
+                    status.status = httpResponse.statusCode
+                }
+            }
+            
             if let data = data {
                 let parser = XMLParser(data: data)
                 parser.delegate = self

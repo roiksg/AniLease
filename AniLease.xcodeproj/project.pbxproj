@@ -39,6 +39,7 @@
 		53E8B7C728ACEDE900DDEFB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53E8B7C528ACEDE900DDEFB3 /* LaunchScreen.storyboard */; };
 		53E8B7D228AD07A000DDEFB3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E8B7D128AD07A000DDEFB3 /* ViewModel.swift */; };
 		53EB628E28C0BDFF0009626B /* SubsPleaseParserXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB628D28C0BDFF0009626B /* SubsPleaseParserXML.swift */; };
+		53F6351228C74AD100CD9952 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F6351128C74AD100CD9952 /* Status.swift */; };
 		D0443FEC1630B65C445DA1DC /* Pods_AniLease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 290DE3FC22C3BA90C2504057 /* Pods_AniLease.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		53E8B7C828ACEDE900DDEFB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53E8B7D128AD07A000DDEFB3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		53EB628D28C0BDFF0009626B /* SubsPleaseParserXML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubsPleaseParserXML.swift; sourceTree = "<group>"; };
+		53F6351128C74AD100CD9952 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		8D8D3A118BED5EEF7A6AE560 /* Pods-AniLease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AniLease.release.xcconfig"; path = "Target Support Files/Pods-AniLease/Pods-AniLease.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,6 +182,7 @@
 				5349E30828B3786300D14A99 /* liveChartParserXML.swift */,
 				535DD6A628B4C55700A8D1D2 /* EraiRawsParserXML.swift */,
 				53EB628D28C0BDFF0009626B /* SubsPleaseParserXML.swift */,
+				53F6351128C74AD100CD9952 /* Status.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				53EB628E28C0BDFF0009626B /* SubsPleaseParserXML.swift in Sources */,
 				53E8B7BB28ACEDE600DDEFB3 /* AppDelegate.swift in Sources */,
 				531697BD28BE237000FB1B4F /* ReleaseMainModel.swift in Sources */,
+				53F6351228C74AD100CD9952 /* Status.swift in Sources */,
 				531697B828BE036C00FB1B4F /* AddOrEditModel.swift in Sources */,
 				5366D9A928B6069F0013DBB6 /* DataBaseModel.swift in Sources */,
 				531697BB28BE081E00FB1B4F /* EpisodCollectionCellModel.swift in Sources */,
