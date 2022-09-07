@@ -10,7 +10,6 @@ import Foundation
 struct ReleaseMainModel {
     let name: String
     let image: String
-    let time: Int
     let Episod: String
     let ID: Int
     let favorite: Bool
