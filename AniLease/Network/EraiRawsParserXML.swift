@@ -68,7 +68,9 @@ class EraiRawsParserXML: NSObject, XMLParserDelegate {
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         switch element {
-        case "title": title += string
+        case "title":
+            title += string
+            title = title.replacingOccurrences(of: "(Multi) ", with: "")
         case "pubDate": pubDate += string
         case "erai:subtitles": subtitles += string
         case "erai:category": category += string
