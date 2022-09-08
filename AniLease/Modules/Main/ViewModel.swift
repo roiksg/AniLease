@@ -22,9 +22,9 @@ class MainViewModel {
     
     // MARK:  INIT
     
-    init (_ vc: ViewController) {
+    init (_ vc: ViewController,_ hidden: Bool) {
         controller = vc
-        parserLiveChartRSS()
+        parserLiveChartRSS(hidden)
     }
     
     // MARK:  FUNC
@@ -65,7 +65,7 @@ class MainViewModel {
         release
     }
     
-    func parserLiveChartRSS() {
+    func parserLiveChartRSS(_ hidden: Bool) {
         let closure = { [unowned self] in
             let anime = self.realm.objects(Anime.self)
             for an in anime {
@@ -73,6 +73,10 @@ class MainViewModel {
             }
             self.loadItemCell(fav: false, hid: false, search: "")
         }
-        dataBase.updateAnime(closure)
+        let update = { [unowned self] in
+            self.loadItemCell(fav: false, hid: hidden, search: "")
+            self.controller.collectionRelease.reloadData()
+        }
+        dataBase.updateAnime(closure, update)
     }
 }

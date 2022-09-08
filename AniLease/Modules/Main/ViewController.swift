@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         status.setVC(self)
         hidden = false
         favorite = false
-        self.viewModel = MainViewModel(self)
+        self.viewModel = MainViewModel(self, hidden)
         searchTextField.delegate = self
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:) ), for: .allEditingEvents)
         searchTextField.autocorrectionType = .no

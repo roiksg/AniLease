@@ -25,7 +25,7 @@ class DataBase {
     // MARK:  UPDATE ANIME TABLE
     // create or apdate row in anime table
     
-    func updateAnime(_ closure: @escaping(() -> Void)) {
+    func updateAnime(_ closure: @escaping(() -> Void), _ update: @escaping(() -> Void)) {
         guard let url = URL(string: LiveChartURL) else {return}
         LCParser.getLiveChartItem(url) { (item) in
             DispatchQueue.main.async {
@@ -87,7 +87,7 @@ class DataBase {
             }
             DispatchQueue.main.async {
                 closure()
-                self.updateEraiRaws()
+                self.updateEraiRaws(update)
             }
         }
     }
@@ -95,7 +95,7 @@ class DataBase {
     // MARK:  UPDATE EraiRaws TABLE
     // create or apdate row in EraiRaws table
     
-    func updateEraiRaws() {
+    func updateEraiRaws(_ update: @escaping(() -> Void)) {
         
         let realm = try! Realm()
         let eraiRaws = realm.objects(EraiRaws.self)
@@ -148,13 +148,12 @@ class DataBase {
                             if newEp {
                                 obj!.episods.append(eps!)
                             }
-                            realm.add(eps!)
-                            realm.add(obj!)
                         }
                         self.connectERToAnime(obj!, eps!)
                     }
                 }
-                self.updateSubsPlease()
+                update()
+                self.updateSubsPlease(update)
             }
         }
     }
@@ -162,7 +161,7 @@ class DataBase {
     // MARK:  UPDATE SubsPlease TABLE
     // create or apdate row in SubsPlease table
     
-    func updateSubsPlease() {
+    func updateSubsPlease(_ update: @escaping(() -> Void)) {
         let realm = try! Realm()
         let sabsPlease = realm.objects(SubsPlease.self)
         guard let url = URL(string: SubsPleaseURl) else {return}
@@ -220,6 +219,7 @@ class DataBase {
                         self.connectSPToAnime(obj!, eps!)
                     }
                 }
+                update()
             }
         }
     }
@@ -394,7 +394,7 @@ class DataBase {
         refreshEpisods(animeID: animeID, titleID: titleID, type: type)
     }
     
-    // MARK:  REFRESH EPISODS CONNECTION
+    // MARK:  REFRESH EPISODS ANIME
     
     func refreshEpisods (animeID: Int, titleID: Int, type: String) {
         let realm = try! Realm()

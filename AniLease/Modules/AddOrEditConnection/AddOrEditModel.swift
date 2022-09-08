@@ -48,11 +48,17 @@ class AddOrEditModel {
         }
         
         eraiRaws.forEach {
+            //
+            var eps: [String] = []
+            $0.episods.forEach {
+                eps.append($0.episods)
+            }
+            eps = eps.sorted {$0.localizedStandardCompare($1) == .orderedAscending}
             if name == ""{
-                eraiRawsCell.append(Cell(id: $0.id, title: $0.titleName, lastepisod: $0.episods.last!.episods, date: $0.episods.last!.pubDate))
+                eraiRawsCell.append(Cell(id: $0.id, title: $0.titleName, lastepisod: eps.last!, date: $0.episods.last!.pubDate))
             }
             else if $0.titleName.lowercased().contains(name) {
-                eraiRawsCell.append(Cell(id: $0.id, title: $0.titleName, lastepisod: $0.episods.last!.episods, date: $0.episods.last!.pubDate))
+                eraiRawsCell.append(Cell(id: $0.id, title: $0.titleName, lastepisod: eps.last!, date: $0.episods.last!.pubDate))
             }
         }
     }
@@ -69,11 +75,16 @@ class AddOrEditModel {
         }
         
         subsPlease.forEach {
+            var eps: [String] = []
+            $0.episods.forEach {
+                eps.append($0.episods)
+            }
+            eps = eps.sorted {$0.localizedStandardCompare($1) == .orderedAscending}
             if name == ""{
-                subsPleaseCell.append(Cell(id: $0.id, title: $0.titleName, lastepisod: $0.episods.last!.episods, date: $0.episods.last!.pubDate))
+                subsPleaseCell.append(Cell(id: $0.id, title: $0.titleName, lastepisod: eps.last!, date: $0.episods.last!.pubDate))
             }
             else if $0.titleName.lowercased().contains(name) {
-                subsPleaseCell.append(Cell(id: $0.id, title: $0.titleName, lastepisod: $0.episods.last!.episods, date: $0.episods.last!.pubDate))
+                subsPleaseCell.append(Cell(id: $0.id, title: $0.titleName, lastepisod: eps.last!, date: $0.episods.last!.pubDate))
             }
         }
     }

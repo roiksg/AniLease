@@ -152,7 +152,7 @@ extension AddOrEditController: UICollectionViewDataSource {
 
 extension AddOrEditController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: 400, height: 130)
+        return .init(width: view.frame.width - 20, height: 130)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
