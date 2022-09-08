@@ -9,6 +9,8 @@ import Foundation
 
 class LiveChartParserXML: NSObject, XMLParserDelegate {
     
+    // MARK:  VAR
+    
     private var item: [LiveChartRSS] = []
     private var completion: (([LiveChartRSS]) -> Void)?
     private let strParser = StringParser()
@@ -20,6 +22,8 @@ class LiveChartParserXML: NSObject, XMLParserDelegate {
     private var pubDate = ""
     private var category = ""
     private var imageURL = ""
+    
+    // MARK:  FUNC
     
     func getLiveChartItem (_ url: URL, completion: (([LiveChartRSS]) -> Void)?) {
         self.completion = completion
@@ -34,6 +38,7 @@ class LiveChartParserXML: NSObject, XMLParserDelegate {
                     let status = Status.shared
                     status.description = "LiveChartRSS parsing"
                     status.status = httpResponse.statusCode
+                    status.status = 0
                 }
             }
             
@@ -77,10 +82,8 @@ class LiveChartParserXML: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "item" {
             let dateFormatter = DateFormatter()
-            // Sun, 21 Aug 2022 09:00:00 +0000
             dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss Z"
             dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-            // "Tue, 30 Aug 2022 03:00:00 +0000"
             pubDate.removeLast(7)
             let time = dateFormatter.date(from: pubDate) ?? Date()
             let (titleName, episodes) = strParser.getNameAndEpisod(title)

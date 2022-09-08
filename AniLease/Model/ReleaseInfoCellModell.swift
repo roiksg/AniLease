@@ -20,7 +20,6 @@ struct EpisodInfo {
 
 struct EraiRawsEpisodInfo {
     var pubDate: Date?
-    var status: String
     var Episod: String
     var subtitles: String
 }
@@ -28,5 +27,4 @@ struct EraiRawsEpisodInfo {
 struct SubsPleaseEpisodInfo {
     var pubDate: Date?
     var episod: String
-    var status: String
 }

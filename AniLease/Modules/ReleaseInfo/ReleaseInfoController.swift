@@ -10,6 +10,8 @@ import Kingfisher
 import Toast_Swift
 
 class ReleaseInfoController: UIViewController, UICollectionViewDelegate {
+    
+    // MARK:  IBOutlet
 
     @IBOutlet weak var episodCollection: UICollectionView!
     @IBOutlet weak var lastEpisod: UILabel!
@@ -23,6 +25,8 @@ class ReleaseInfoController: UIViewController, UICollectionViewDelegate {
     
     
     var identifier: Int!
+    
+    // MARK:  override
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +53,8 @@ class ReleaseInfoController: UIViewController, UICollectionViewDelegate {
         }
     }
     
+    // MARK:  FUNC
+    
     func changeImage() {
         if anime.favorite == true {
             favorite.setImage(UIImage(systemName: "star.fill"), for: .normal)
@@ -63,6 +69,8 @@ class ReleaseInfoController: UIViewController, UICollectionViewDelegate {
             hidden.setImage(UIImage(systemName: "eye"), for: .normal)
         }
     }
+    
+    // MARK:  IBAction
     
     @IBAction func showAddOrEdit(_ sender: Any) {
         self.performSegue(withIdentifier: "AddOrEditSegue", sender: self)
@@ -97,6 +105,12 @@ class ReleaseInfoController: UIViewController, UICollectionViewDelegate {
     }
 }
 
+// MARK:  EXTENSION
+
+
+
+// MARK:  UICollectionViewDataSource
+
 extension ReleaseInfoController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.releaseCount()
@@ -108,6 +122,8 @@ extension ReleaseInfoController: UICollectionViewDataSource {
         return collectionCell
     }
 }
+
+// MARK:  UICollectionViewDelegateFlowLayout
 
 extension ReleaseInfoController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

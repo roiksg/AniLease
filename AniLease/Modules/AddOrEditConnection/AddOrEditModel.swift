@@ -11,16 +11,22 @@ import RealmSwift
 
 class AddOrEditModel {
     
+    // MARK:  VAR
+    
     weak var controller: AddOrEditController!
     private var realm: Realm!
     private var eraiRawsCell: [Cell] = []
     private var subsPleaseCell: [Cell] = []
+    
+    // MARK:  INIT
     
     init (_ vc: AddOrEditController) {
         controller  = vc
         realm = try! Realm()
         loadModel()
     }
+    
+    // MARK:  FUNC
     
     func loadModel(_ search: String = "") {
         eraiRawsCell = []

@@ -9,6 +9,9 @@ import UIKit
 import Toast_Swift
 
 class ViewController: UIViewController {
+    
+    // MARK:  IBOutlet
+    
     @IBOutlet weak var collectionRelease: UICollectionView!
     
     @IBOutlet private weak var hiddenButton: UIButton!
@@ -26,6 +29,8 @@ class ViewController: UIViewController {
     private var favorite: Bool!
     
     private var search: String = ""
+    
+    // MARK:  OVERRIDE
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +71,8 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: func
+    
     func changeStstus(_ status: Int, _ description: String ) {
         let alert: UIAlertController
         alert = .init(title: "Error", message: "network status \(status)\n\(description)", preferredStyle: .alert)
@@ -88,6 +95,8 @@ class ViewController: UIViewController {
         textField.resignFirstResponder()
         return true
     }
+    
+    // MARK: IBAction
     
     @IBAction func unwindMain(_ unwindSegue: UIStoryboardSegue) {
         
@@ -126,7 +135,12 @@ class ViewController: UIViewController {
     
 }
 
-// MARK: extension
+// MARK: Extension
+
+
+
+// MARK: UICollectionViewDataSource
+
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -145,6 +159,8 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: UICollectionViewDelegateFlowLayout
+
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width, height: 170)
@@ -154,6 +170,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         return 5
     }
 }
+
+// MARK:  UITextFieldDelegate
 
 extension ViewController: UITextFieldDelegate {
     // hidde keyboard for tap

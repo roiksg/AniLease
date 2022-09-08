@@ -9,6 +9,8 @@ import Foundation
 
 class SubsPleaseParserXML: NSObject, XMLParserDelegate {
     
+    // MARK:  VAR
+    
     private var item: [SubsPleaseRSS] = []
     private var completion: (([SubsPleaseRSS]) -> Void)?
     private let strParser = StringParser()
@@ -18,6 +20,8 @@ class SubsPleaseParserXML: NSObject, XMLParserDelegate {
     private var title = ""
     private var pubDate = ""
     private var episodes = ""
+    
+    // MARK:  FUNC
     
     func getSubsPleaseItem (_ url: URL, completion: (([SubsPleaseRSS]) -> Void)?) {
         self.completion = completion
@@ -32,6 +36,7 @@ class SubsPleaseParserXML: NSObject, XMLParserDelegate {
                     let status = Status.shared
                     status.description = "SubsPleaseRSS parsing"
                     status.status = httpResponse.statusCode
+                    status.status = 0
                 }
             }
             

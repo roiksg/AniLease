@@ -28,6 +28,8 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     var segue: (() -> ())?
     
+    // MARK:  OVERRIDE
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -35,6 +37,8 @@ class MainCollectionViewCell: UICollectionViewCell {
         self.addGestureRecognizer(touch)
         // Initialization code
     }
+    
+    // MARK:  FUNC
     
     @objc func tapToLabelCell () {
         segue!()

@@ -10,6 +10,8 @@ import RealmSwift
 
 class ReleaseInfoModel {
     
+    // MARK:  var
+    
     private var id: Int!
     private var dataBase = DataBase()
     private var realm = try! Realm()
@@ -18,12 +20,16 @@ class ReleaseInfoModel {
     
     weak var controller: ReleaseInfoController!
     
+    // MARK:  INIT
+    
     init (_ vc: ReleaseInfoController) {
         controller = vc
         id = vc.identifier
         animeEpisods = dataBase.getEpisod(id)
         loadDate()
     }
+    
+    // MARK:  FUNC
     
     func loadDate() {
         let anime = realm.objects(Anime.self)

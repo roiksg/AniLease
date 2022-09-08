@@ -9,6 +9,8 @@ import UIKit
 
 class ReleaseInfoCollectionCell: UICollectionViewCell {
     
+    // MARK:  IBOutlet
+    
     @IBOutlet private weak var animeEpisod: UILabel!
     @IBOutlet private weak var animeDate: UILabel!
     @IBOutlet private weak var eraiRawsEpisod: UILabel!
@@ -19,6 +21,8 @@ class ReleaseInfoCollectionCell: UICollectionViewCell {
     @IBOutlet private weak var collectionFlag: UICollectionView!
     static let identifier = "EpisodsInfoCell"
     private var subtitles: [SubFlag] = []
+    
+    // MARK:  OVERRIDE
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +31,7 @@ class ReleaseInfoCollectionCell: UICollectionViewCell {
         self.collectionFlag.register(.init(nibName: "FlagCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: FlagCollectionViewCell.identifier)
         // Initialization code
     }
+    // MARK:  FUNC
     
     func configureXib (_ info: Info) {
         collectionFlag.backgroundColor = erColor.backgroundColor
@@ -56,6 +61,12 @@ class ReleaseInfoCollectionCell: UICollectionViewCell {
 
 }
 
+// MARK:  EXTENSION
+
+
+
+// MARK:  UICollectionViewDataSource
+
 extension ReleaseInfoCollectionCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return subtitles.count
@@ -67,6 +78,8 @@ extension ReleaseInfoCollectionCell: UICollectionViewDataSource {
         return collectionCell
     }
 }
+
+// MARK: UICollectionViewDelegateFlowLayout
 
 extension ReleaseInfoCollectionCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

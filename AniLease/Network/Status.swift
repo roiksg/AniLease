@@ -21,7 +21,7 @@ class Status {
     var description = ""
     var status: Int? {
         didSet {
-            if status != 200 {
+            if status != 200 && status != 0 {
                 controller?.changeStstus(status!, description)
             }
         }

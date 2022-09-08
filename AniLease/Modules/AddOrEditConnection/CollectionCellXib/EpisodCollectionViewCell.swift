@@ -8,12 +8,17 @@
 import UIKit
 
 class EpisodCollectionViewCell: UICollectionViewCell {
+    
+    // MARK:  IBOutlet
+    
     @IBOutlet private weak var type: UILabel!
     @IBOutlet private weak var title: UILabel!
     @IBOutlet private weak var lastEpisod: UILabel!
     @IBOutlet private weak var date: UILabel!
     static let identifier = "EpisodCVC"
     var closure: (() -> ())?
+    
+    // MARK:  OVERRIDE
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +27,8 @@ class EpisodCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
+    // MARK:  FUNC
+    
     @objc func tapToCell () {
         closure!()
     }
@@ -29,7 +36,6 @@ class EpisodCollectionViewCell: UICollectionViewCell {
     func configureXib(_ type: String, _ title: String, _ lastEp: String, _ pubDate: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss"
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         self.type.text = type
         self.title.text = title
         self.lastEpisod.text = lastEp

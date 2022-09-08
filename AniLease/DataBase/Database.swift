@@ -9,6 +9,9 @@ import Foundation
 import RealmSwift
 
 class DataBase {
+    
+    // MARK:  VAR
+    
     private var LCItem: [LiveChartRSS] = []
     private var ERItem: [EraiRawsRSS] = []
     private var SPItem: [SubsPleaseRSS] = []
@@ -18,6 +21,9 @@ class DataBase {
     private var LiveChartURL = "https://www.livechart.me/feeds/episodes"
     private var EraiRawsURL = "https://www.erai-raws.info/feed/?res=1080p&type=torrent&0879fd62733b8db8535eb1be24e23f6d"
     private var SubsPleaseURl = "https://subsplease.org/rss/?t&r=1080"
+    
+    // MARK:  UPDATE ANIME TABLE
+    // create or apdate row in anime table
     
     func updateAnime(_ closure: @escaping(() -> Void)) {
         guard let url = URL(string: LiveChartURL) else {return}
@@ -86,6 +92,9 @@ class DataBase {
         }
     }
     
+    // MARK:  UPDATE EraiRaws TABLE
+    // create or apdate row in EraiRaws table
+    
     func updateEraiRaws() {
         
         let realm = try! Realm()
@@ -150,6 +159,9 @@ class DataBase {
         }
     }
     
+    // MARK:  UPDATE SubsPlease TABLE
+    // create or apdate row in SubsPlease table
+    
     func updateSubsPlease() {
         let realm = try! Realm()
         let sabsPlease = realm.objects(SubsPlease.self)
@@ -212,6 +224,8 @@ class DataBase {
         }
     }
     
+    // MARK:  CONNECTION TO ANIME
+    
     func connectERToAnime (_ er: EraiRaws, _ episod: EraiRawsEpisods) {
         let realm = try! Realm()
         let anime = realm.objects(Anime.self)
@@ -264,6 +278,8 @@ class DataBase {
         }
     }
     
+    // MARK:  GET ANIME EPISODS
+    
     func getEpisod(_ id: Int) -> [AnimeEpisods] {
         let realm = try! Realm()
         let anime = realm.objects(Anime.self)
@@ -274,12 +290,13 @@ class DataBase {
         return episod
     }
     
+    // MARK:  GET INFO MODEL
+    
     func getInfoModel(_ id: Int) -> [Info] {
         let realm = try! Realm()
         var info: [Info] = []
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss"
-//        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         let anime = realm.objects(Anime.self)
         let curentAnime = anime.where{
             $0.id == id
@@ -290,16 +307,16 @@ class DataBase {
             var eraiRawsEpisodInfo: EraiRawsEpisodInfo
             var subsPleaseEpisodInfo: SubsPleaseEpisodInfo
             if $0.ERE == nil {
-                eraiRawsEpisodInfo = EraiRawsEpisodInfo(pubDate: nil, status: "Non", Episod: "", subtitles: "")
+                eraiRawsEpisodInfo = EraiRawsEpisodInfo(pubDate: nil, Episod: "", subtitles: "")
             }
             else {
-                eraiRawsEpisodInfo = EraiRawsEpisodInfo(pubDate: $0.ERE!.pubDate, status: "Good", Episod: $0.ERE!.episods, subtitles: $0.ERE!.subtitles)
+                eraiRawsEpisodInfo = EraiRawsEpisodInfo(pubDate: $0.ERE!.pubDate, Episod: $0.ERE!.episods, subtitles: $0.ERE!.subtitles)
             }
             if $0.SPE == nil {
-                subsPleaseEpisodInfo = SubsPleaseEpisodInfo(pubDate: nil, episod: "", status: "Non")
+                subsPleaseEpisodInfo = SubsPleaseEpisodInfo(pubDate: nil, episod: "")
             }
             else {
-                subsPleaseEpisodInfo = SubsPleaseEpisodInfo(pubDate: $0.SPE!.pubDate, episod: $0.SPE!.episods, status: "Good")
+                subsPleaseEpisodInfo = SubsPleaseEpisodInfo(pubDate: $0.SPE!.pubDate, episod: $0.SPE!.episods)
             }
             
             let episodInfo = EpisodInfo(episod: $0.episods, pubdate: $0.pubDate)
@@ -307,6 +324,8 @@ class DataBase {
         }
         return info
     }
+    
+    // MARK:  ADD CUSTOM CONNECTION
     
     func addConnection (animeID: Int, titleID: Int, type: String) {
         let realm = try! Realm()
@@ -374,6 +393,8 @@ class DataBase {
         }
         refreshEpisods(animeID: animeID, titleID: titleID, type: type)
     }
+    
+    // MARK:  REFRESH EPISODS CONNECTION
     
     func refreshEpisods (animeID: Int, titleID: Int, type: String) {
         let realm = try! Realm()

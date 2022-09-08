@@ -9,6 +9,8 @@ import UIKit
 
 class AddOrEditController: UIViewController {
     
+    // MARK:  IBOutlet
+    
     @IBOutlet private weak var collectionEpisod: UICollectionView!
     @IBOutlet private weak var eraiRawsView: UIView!
     @IBOutlet private weak var subsPleaseView: UIView!
@@ -20,6 +22,8 @@ class AddOrEditController: UIViewController {
     private var type: String!
     
     var identifier: Int!
+    
+    // MARK:  OVERRIDE
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +44,8 @@ class AddOrEditController: UIViewController {
         viewModel.loadModel()
         collectionEpisod.reloadData()
     }
+    
+    // MARK:  FUNC
     
     func modelUpdate(er: [Cell], sp: [Cell]) {
         eraiRawsCell = er
@@ -73,7 +79,7 @@ class AddOrEditController: UIViewController {
         reloadCollection()
     }
     
-    
+    // MARK:  IBAction
     
     @IBAction func eraiRawsTap(_ sender: Any) {
         collectionCellModel = eraiRawsCell
@@ -94,6 +100,12 @@ class AddOrEditController: UIViewController {
     
 
 }
+
+// MARK:  EXTENSION
+
+
+
+// MARK:  UICollectionViewDataSource
 
 extension AddOrEditController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -136,6 +148,8 @@ extension AddOrEditController: UICollectionViewDataSource {
     }
 }
 
+// MARK:  UICollectionViewDelegateFlowLayout
+
 extension AddOrEditController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: 400, height: 130)
@@ -145,6 +159,8 @@ extension AddOrEditController: UICollectionViewDelegateFlowLayout {
         return 5
     }
 }
+
+// MARK:  UITextFieldDelegate
 
 extension AddOrEditController: UITextFieldDelegate {
     // hidde keyboard for tap

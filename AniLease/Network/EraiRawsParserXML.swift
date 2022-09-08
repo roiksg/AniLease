@@ -9,6 +9,8 @@ import Foundation
 
 class EraiRawsParserXML: NSObject, XMLParserDelegate {
     
+    // MARK:  VAR
+    
     private var item: [EraiRawsRSS] = []
     private var completion: (([EraiRawsRSS]) -> Void)?
     private let strParser = StringParser()
@@ -20,6 +22,8 @@ class EraiRawsParserXML: NSObject, XMLParserDelegate {
     private var subtitles = ""
     private var category = ""
     private var episodes = ""
+    
+    // MARK:  FUNC
     
     func getEraiRawsItem (_ url: URL, completion: (([EraiRawsRSS]) -> Void)?) {
         self.completion = completion
@@ -34,6 +38,7 @@ class EraiRawsParserXML: NSObject, XMLParserDelegate {
                     let status = Status.shared
                     status.description = "EraiRawsRSS parsing"
                     status.status = httpResponse.statusCode
+                    status.status = 0
                 }
             }
             

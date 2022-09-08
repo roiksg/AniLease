@@ -9,6 +9,9 @@ import Foundation
 import RealmSwift
 
 class MainViewModel {
+    
+    // MARK:  var / let
+    
     weak var controller: ViewController!
     
     private var release: [ReleaseMainModel] = []
@@ -17,10 +20,14 @@ class MainViewModel {
     private let realm = try! Realm()
     private var urlString = "https://www.livechart.me/feeds/episodes"
     
+    // MARK:  INIT
+    
     init (_ vc: ViewController) {
         controller = vc
         parserLiveChartRSS()
     }
+    
+    // MARK:  FUNC
     
     func loadItemCell(fav: Bool? = nil, hid: Bool? = nil, search: String){
         release = []
