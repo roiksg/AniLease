@@ -56,9 +56,8 @@ class DataBase {
                         }
                     }
                     else {
-                        let episods = obj!.episod
                         let strParser = StringParser()
-                        var eps = episods.where {
+                        var eps = obj!.episod.where {
                             $0.episods == strParser.strEpisodNumber(curent.episods)
                         }.first
                         if eps == nil {
@@ -131,9 +130,8 @@ class DataBase {
                     }
                     
                     else {
-                        let episods = obj!.episods
                         var newEp: Bool = false
-                        var eps = episods.where {
+                        var eps = obj!.episods.where {
                             $0.episods == strParser.strEpisodNumber(curent.episods)
                         }.first
                         if eps == nil {
@@ -195,9 +193,8 @@ class DataBase {
                     
                     else {
                         
-                        let episods = obj!.episods
                         var newEp = false
-                        var eps = episods.where {
+                        var eps = obj!.episods.where {
                             $0.episods == strParser.strEpisodNumber(curent.episods)
                         }.first
                         
@@ -282,8 +279,7 @@ class DataBase {
     
     func getEpisod(_ id: Int) -> [AnimeEpisods] {
         let realm = try! Realm()
-        let anime = realm.objects(Anime.self)
-        let curentAnime = anime.where{
+        let curentAnime = realm.objects(Anime.self).where{
             $0.id == id
         }.first
         let episod: [AnimeEpisods] = Array(curentAnime!.episod)
@@ -297,8 +293,7 @@ class DataBase {
         var info: [Info] = []
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss"
-        let anime = realm.objects(Anime.self)
-        let curentAnime = anime.where{
+        let curentAnime = realm.objects(Anime.self).where{
             $0.id == id
         }.first
         let episods = curentAnime?.episod
@@ -329,8 +324,7 @@ class DataBase {
     
     func addConnection (animeID: Int, titleID: Int, type: String) {
         let realm = try! Realm()
-        let anime = realm.objects(Anime.self)
-        let curentAnime = anime.where {
+        let curentAnime = realm.objects(Anime.self).where {
             $0.id == animeID
         }.first
         if type == "EraiRaws"{
